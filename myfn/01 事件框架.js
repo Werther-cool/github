@@ -172,7 +172,76 @@ $$.extend($$,{
         }else if(dom.attachEvent){
             dom.attachEvent('on'+type,fn);
         }
+    },
+    /*解除绑定*/
+    un:function (id,type,fn) {
+        var dom = isString(id) ? document.getElementById(id) : id;
+        if(dom.removeEventListener){
+            dom.removeEventListener(type,fn);
+        }else if(dom.detachEvent){
+            dom.detachEvent(type,fn);
+        }
+    },
+    /*点击*/
+    click : function (id,fn) {
+        this.on(id,'click',fn);
+    },
+    /*鼠标移上*/
+    mouseover : function (id,fn) {
+        this.on(id,'mouseover',fn);
+    },
+    /*鼠标移开*/
+    mouseout : function (id,fn) {
+        this.on(id,'mouseout',fn);
+    },
+    /*悬浮*/
+    hover : function (id,fnOver,fnOut) {
+        if(fnOver){
+            this.on(id,'mouseover',fnOver);
+        }
+        if(fnOut){
+            this.on(id,'mouseout',fnOut);
+        }
+    },
+    /*事件委托*/
+    delegate : function (pid,eventType,selector,fn) {
+        //参数处理
+        var parent = $$.$id(pid);
+        
+        function handle(e) {
+            var target = $$.GetTarget(e);
+            if(target.nodeName.toLowerCase() === selector || target.id === selector || target.className.indexOf(selector) != -1 ){
+                fn.call(target);
+            }
+        }
+        parent[eventType] = handle;
+    },
+    /*事件基础*/
+    getEvent : function (event) {
+        return event ? event : window.event;
+    },
+    /*获取目标*/
+    getTarget : function (event) {
+        var e = $$.getEvent(event);
+        return e.target || e.srcElement;
+    },
+    /*阻止默认行为*/
+    preventDefault : function (event) {
+        var event = $$.getEvent(event);
+        if(event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue = false;
+        }
+    },
+    /*阻止冒泡*/
+    stopPropagation : function (event) {
+        var event = $$.getEvent(event);
+        if(event.stopPropagation){
+            event.stopPropagation();
+        }else{
+            event.cancelBubble = true;
+        }
     }
-    
-    
+
 });
