@@ -131,21 +131,32 @@ $$.extend($$,{
         }
     },
 
-    
-    
-    
-    
-    
-    
-    
+    /*多组 和层次*/
+    $select : function(str){
+        var result = [];
+        var context = [];
+        var item = $$.item(str).split(',');
+        for(var i = 0;glen = item.length;i++){
+            var select = $$.trim(item[i]);
+            var result = [];
+            result = $$.$cengci(select);
+            pushArray(result,context);
+        };
+        return context;
+        /*内部重复函数*/
+        function pushArray(doms, result) {
+            for (var j = 0; j < doms.length; j++) {
+                result.push(doms[j]);
+            }
+        }
+
+    },
     /*html5选择器 移动端通用 相当于sizzle jQuery的选择器*/
 
     $all : function (selector,context) {
         context = context || document;
         return context.querySelectorAll(selector);
     }
-    
-    
     
 });
 
