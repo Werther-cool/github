@@ -1,9 +1,20 @@
-/**
- * 作者：传智播客教育集团
- * 开发日期：2016/01/12
- * 描述：通用框架
- * 版权所有 违者必究
- */
+
+;(function (w) {
+    var $$ = {
+        elements : [],
+        extend :function (tar,source) {
+            for(var i in source){
+                tar[i] = source[i];
+            }
+            return tar;
+        }
+    };
+    w.$$ = itcast = w.itcast;
+})(window);
+
+
+
+
 var $$ = function() {};
 $$.prototype = {
 	/*将一个对象的所有属性拷贝给另一个对象*/
@@ -709,7 +720,7 @@ Animate.prototype ={
     //初始化执行的代码一般放在init里面，一般是构造函数调用
     _init:function(){},
 
-	/*新的技术*/
+    /*新的技术*/
    getAnimationFrame:function(){
     var lastTime = 0;
     var prefixes = 'webkit moz ms o'.split(' '); //各浏览器前缀
@@ -886,7 +897,6 @@ Animate.prototype ={
         _obj.styles = target;
         this._queen.push(_obj)
     },
-
 
 
 
