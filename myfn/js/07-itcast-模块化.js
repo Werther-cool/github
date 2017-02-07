@@ -15,7 +15,6 @@
     w.itcast = w.$$ = itcast;
 })(window);
 
-
 /*封装基础*/
 itcast.extend(itcast,{
     //去除左边空格
@@ -195,7 +194,8 @@ itcast.extend(itcast,{
                     pushArray(doms, result)
 
                 } else if (first === '#') {
-                    doms = [$$.$id(item.slice(index + 1))]//陷阱：之前我们定义的doms是数组，但是$id获取的不是数组，而是单个元素
+                    doms = [$$.$id(item.slice(index + 1))];
+                    //陷阱：之前我们定义的doms是数组，但是$id获取的不是数组，而是单个元素
                     //封装重复的代码成函数
                     pushArray(doms, result)
                 } else {
@@ -221,7 +221,7 @@ itcast.extend(itcast,{
                 var index = item.indexOf(first)
                 if (first === '#') {
                     //如果是#，找到该元素，
-                    pushArray([$$.$id(item.slice(index + 1))]), result;
+                    pushArray([$$.$id(item.slice(index + 1))], result);
                     context = result;
                 } else if (first === '.') {
                     //如果是.
