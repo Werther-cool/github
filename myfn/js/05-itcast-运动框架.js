@@ -538,6 +538,9 @@ $$.extend($$,{
 /*checkbox select button text textarea radio*/
 
 /*动画框架*/
+/*	使用格式
+*   $$.animate.add(div,{'height':500})
+* */
 function Animate() {
 
     //一般再编写框架的时候都会定义一个配置对象保存控制动画的一些值，允许用户自定义

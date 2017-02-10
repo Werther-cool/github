@@ -280,7 +280,7 @@ itcast.extend(itcast,{
         //如果你想检测对象是否支持某个属性，方法，可以通过这种方式
         for (var i = 0, len = doms.length; i < len; i++) {
             if (doms[i].addEventListener) {
-                doms[i].addEventListener(type, fn, false);
+                doms[i].addEventListener(type, fn, false);2
             } else if (doms[i].attachEvent) {
                 //如果支持 --IE
                 doms[i].attachEvent('on' + type, fn);
@@ -331,13 +331,13 @@ itcast.extend(itcast,{
     }
         //显示
     $$.show = function () {
-//                var doms =  $$.$all(content)
-//                var doms = this.elements;
-//                for(var i= 0,len=doms.length;i<len;i++){
-//                    doms[i].css('display', 'block');
-//                }
-//                因为css接收的是当前对象，css中会通过this.elements获取元素列表
-            this.css('display', 'block')
+    /*   var doms =  $$.$all(content)
+       var doms = this.elements;
+       for(var i= 0,len=doms.length;i<len;i++){
+           doms[i].css('display', 'block');
+       }
+       因为css接收的是当前对象，css中会通过this.elements获取元素列表*/
+            this.css('display', 'block');
             return this;
         }
         //隐藏和显示元素
@@ -452,7 +452,7 @@ itcast.extend(itcast,{
         },
         $$.removeClass = function (name) {
             var doms = this.elements
-            for (var i = 0, len = doms.length; i < len; i++) {
+            for (var i = 0, len = doms.length; i < len; i++){
                 removeName(doms[i]),name;
             }
             return this;
@@ -510,6 +510,14 @@ itcast.extend(itcast,{
          *放置其他部门都会使用的公共方法属性
          *-------------------------------------------------*/
         eases:{
+
+            /*
+            * Pass(t):动画已经执行的时间
+            * from(begin)(b) 起始位置 开始位置
+            * To(change)(c) 终止位置
+            * d duration
+            * allTime(duration)(d)持续时间
+            * */
             //线性匀速
             linear:function (t, b, c, d){
                 return (c - b) * (t/ d);
@@ -829,9 +837,6 @@ itcast.extend(itcast,{
             _obj.styles = target;
             this._queen.push(_obj)
         },
-
-
-
 
         /* ------------------------------------------------
          *公共API -- 学习什么是公共API

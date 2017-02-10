@@ -248,11 +248,50 @@ itcast.extend(itcast,{
         
         return context;
     };
-    
+
+
+    $$.$cengci = function (select) {
+        var result = [],context = [];
+        var sel = $$.trim(select).split(' ');
+        for (var i = 0; i < sel.length; i++) {
+            var item = sel[i];
+            var first = item.charAt(0);
+            var index = item.indexOf(first);
+            
+            if(first == '#'){
+                pushArray([$$.$id($$.trim(item.slice(index+1)))],result);
+                context = result;
+            }else if(first == "."){
+                if(context.length){
+                    for (var j = 0; j < context.length; j++) {
+                        pushArray($$.$class($$.trim(item.slice(index+1)),context[j]),result);
+                    }
+                }else{
+                    pushArray($$.$class($$.trim(item.slice(index+1)),context),result);
+                }
+                
+                context =result;
+            }else{
+                if(context.length){
+                    for (var j = 0; j < context.length; j++) {
+                        pushArray($$.$tag($$.trim(item),context[j]),result)
+                    }
+                }else{
+                    pushArray($$.$tag($$.trim(item),context),result)
+                }
+                context =result;
+            }
+        }
+        return context;
+
+    }
+
+
+
+
     /* 多组加层级
     *  多组内部使用层次
     * */
-    
     $$.$select = function (str) {
         var result = [];
         var sel = $$.trim(str).slice(',');
@@ -272,16 +311,119 @@ itcast.extend(itcast,{
 /*事件框架*/
 ;(function ($$) {
     $$.on = function (type,fn) {
+        
         var doms = this.elements;
+        
+        for (var i=0,len=doms.length;i<len;i++){
+            if(doms[i].addEventListener){
+                doms[i].addEventListener(type,fn,false);
+            }else if(doms[i].attachEvent){
+                //ie
+                doms[i].attachEvent('on',type,fn);
+            }
+        }
+        return this;
     }
-    
-    
-    
-    
 })(itcast);
 
+/*css框架*/
+;(function ($$) {
+    $$.css = function (key, value) {
+        var doms = this.elements;
+        
+        if(doms.length){
+        //如果是数组
+            if(value){
+                //有值 -> 设置
+                for(var i=0;i<doms.length;i++){
+                    //设置单一属性
+                    setStyle(doms[i],key,value);
+                }
+            }else{
+                // ->取值
+                getStyle(dom[0],key);
+            }
+        }else{ 
+        //如果不是数组
+            if(value){
+                setStyle(dom,key,value);
+            }else{
+                getStyle(dom,key);
+            }
+        }
+        
+        /*单一设置*/
+        function setStyle(dom,key, value) {
+            dom[key] = value;
+        }
+        /*单一取值*/
+        function getStyle(dom,key) {
+            if(dom.currentStyle){
+                //ie
+                return dom.currentStyle[key];
+            }else{
+                return getComputedStyle(dom,null)[key];
+            }
+        }
+        return this;
+    }
+    
+    $$.hide = function () {
+        this.css('display','none');
+        return this;
+    };
+    $$.show = function () {
+        this.css('display','block');
+        return this;
+    };
+})(itcast);
 
+/*属性框架*/
+;(function ($$) {
 
+    /* 公用方法
+    *  属性操作,获取属性的值,设置属性的值, attr('test','target','_blank')
+    * */
+    $$.attr =function (key,value) {
+        var doms = this.elements;
+        if(value){
+            for(var i=0; i<doms.length; i++){
+                doms[i].setAttribute(key,value);
+            }
+        }else{
+            return doms[0].getAttribute(key);
+        }
+        return this;
+    };
+
+    $$.addClass =function (name) {
+        var doms = this.elements;
+        /* 如果是集合*/
+        for(var i=0;i<doms.length;i++){
+            addName(dom[i],name);
+        }
+        return this;
+    };
+    $$.removeClass =function (name) {
+        var doms = this.elements;
+        for(var i =0;i<doms.length;i++){
+            removeName(doms[i],name);
+        }
+        return this;
+    };
+    /* 私有方法
+    *  内部使用
+    * */
+
+    function addName(dom,name) {
+        dom.className = dom.className + ' ' + name;
+    };
+
+    function removeName(dom,name) {
+        dom.className = dom.className.replace(name,'');
+    };
+    
+})(itcast);
 
 
 

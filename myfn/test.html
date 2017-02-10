@@ -3,26 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border:0;
+            list-style: none;
+        }
+        div{
+            width: 200px;
+            height: 400px;
+            background: tan;
+        }
+        button{
+            width: 40px;
+            background: green;
+        }
+    </style>
 </head>
 <body>
 
-<div>asdadasdasda</div>
+<div id="div">
+</div>
 
+<button>1</button>
+<script src="js/07-itcast-模块化.js"></script>
+<!--<script src="js/05-itcast-运动框架.js"></script>-->
+<!--<script src="js/06-itcast_链式访问-.js"></script>-->
 <script>
-    var $ = {
 
-        getEle:{
+//    console.log($$.$tag('button'));
+//    console.log($$);
+//    $$.$all('button').on('click',function () {
+//        var div = $$.$all('div');
+//        animate.add(div,{'height':500})
+//    })
+//    $$.animate.add(div,{'height':500})
 
-            tag:function (tag) {
-                return document.getElementsByTagName(tag);
-
-            }
-         }
-
-    };
-
-    console.log($.getEle.tag("div"));
-//    console.log($.tag("div"));
+      var div = $$.$all('div')
+              div.animate({'height':500});
 
 </script>
 
