@@ -27,7 +27,7 @@
 </div>
 
 <button>1</button>
-<script src="js/07-itcast-模块化.js"></script>
+<!--<script src="js/07-itcast-模块化.js"></script>-->
 <!--<script src="js/05-itcast-运动框架.js"></script>-->
 <!--<script src="js/06-itcast_链式访问-.js"></script>-->
 <script>
@@ -40,9 +40,45 @@
 //    })
 //    $$.animate.add(div,{'height':500})
 
-      var div = $$.$all('div')
-              div.animate({'height':500});
+//      var div = $$.$all('div')
+//              div.animate({'height':500});
 
+function Person(name) {
+    this.name = name;
+}
+
+
+
+var p1 =new Person("xiaom");
+
+
+//Person.prototype.getName = function () {
+//    return this.name ;
+//}
+
+    Person.prototype = {
+        constructor : Person,
+
+    };
+
+var p2 =new Person("ww");
+
+Person.prototype.getName =function () {
+    return this.name;
+}
+console.log(Person.prototype);
+//console.log(p1.prototype);
+//console.log(p1.getName());
+console.log(p2.getName());
+//console.log("prototype" in Person);
+//console.log("prototype" in p1);
+//console.log(p1);
+//
+//
+//function fn() {
+//
+//    }
+//console.log(fn.prototype);
 </script>
 
 
