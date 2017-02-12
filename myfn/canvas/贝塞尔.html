@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        
+        #canvas{
+            border: 1px solid #000;
+        }
+        
+    </style>
+</head>
+
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+    function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+
+//            // 贝尔赛曲线
+//            ctx.beginPath();
+//            ctx.moveTo(75,25);
+//            ctx.quadraticCurveTo(25,25,25,62.5);
+//            ctx.quadraticCurveTo(25,100,50,100);
+//            ctx.quadraticCurveTo(50,120,30,125);
+//            ctx.quadraticCurveTo(60,120,65,100);
+//            ctx.quadraticCurveTo(125,100,125,62.5);
+//            ctx.quadraticCurveTo(125,25,75,25);
+//            ctx.stroke();
+
+
+
+//            ctx.arc(60,65,5,0,Math.PI*2,true)
+
+
+
+            function drawArc(x,y,color) {
+                ctx.beginPath();
+
+                ctx.arc(x,y,2,0,Math.PI*2,true);
+                ctx.strokeStyle =color || "black";
+                ctx.stroke();
+            }
+
+            /*原始点*/
+            drawArc(75,25);
+            drawArc(25,62.5,"red");
+            drawArc(50,100);
+            drawArc(30,125,"blue");
+            drawArc(65,100);
+            drawArc(125,62.5);
+            drawArc(75,25);
+
+            drawArc(25,25,"green");
+            drawArc(25,100,"green");
+            drawArc(50,120,"green");
+            drawArc(60,120,"green");
+            drawArc(125,100,"green");
+            drawArc(125,25,"green");
+
+
+
+
+            ctx.beginPath();
+            ctx.moveTo(75,25);
+            ctx.quadraticCurveTo(25,25,25,50);
+            ctx.quadraticCurveTo(25,100,50,100);
+            ctx.quadraticCurveTo(50,120,30,125);
+            ctx.quadraticCurveTo(60,120,65,100);
+            ctx.quadraticCurveTo(125,100,125,50);
+            ctx.quadraticCurveTo(125,25,75,25);
+            ctx.stroke();
+        }
+    }
+
+    draw();
+</script>
+
+
+</body>
+</html>

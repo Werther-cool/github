@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+    
+    <script>
+            function draw() {
+                //获取元素
+                var canvas = document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                 for(var i=0;i<6;i++){
+                  for (var j = 0; j < 6; j++) {
+                     ctx.strokeStyle = 'rgba('+ Math.floor(255-42.5*j)+','+Math.floor(255-42.5*i) +',0,1)';
+                      ctx.beginPath();
+                      ctx.arc(12.5+i*25,12.5+j*25,10,0,Math.PI*2,true);
+                      ctx.stroke();
+
+                  }
+              }
+            
+        }
+            draw();
+    </script>
+</body>
+</html>
