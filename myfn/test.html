@@ -32,53 +32,82 @@
 <!--<script src="js/06-itcast_链式访问-.js"></script>-->
 <script>
 
-//    console.log($$.$tag('button'));
-//    console.log($$);
-//    $$.$all('button').on('click',function () {
-//        var div = $$.$all('div');
-//        animate.add(div,{'height':500})
-//    })
-//    $$.animate.add(div,{'height':500})
 
-//      var div = $$.$all('div')
-//              div.animate({'height':500});
+//    var arr = [1,2,3,4];
 
-function Person(name) {
-    this.name = name;
-}
+//var array = [{name:"xm"},{name:"xh"},{name:"xx"}];
 
-
-
-var p1 =new Person("xiaom");
-
-
-//Person.prototype.getName = function () {
-//    return this.name ;
+//for (var i = 0; i < array.length; i++) {
+//    var obj = array[i];
+//    if(obj == {name:"xm"} ){
+//        console.log('1');
+//    }else{
+//        console.log(-1)
+//    }
+//
 //}
 
-    Person.prototype = {
-        constructor : Person,
+//var shallowCopy = array.slice();
+//console.log(shallowCopy);
+//    var element = {name:"xm"};
+//    var ee = array[0];
+//    console.log(array.indexOf(element)); // -1
+//    console.log(array.indexOf(ee));     // 1
 
-    };
 
-var p2 =new Person("ww");
+//
+//var map = Array.prototype.map;
+//var a = map.call("Hello World", function(x) {
+//    return x.charCodeAt(0);
+//})
+//console.log(a);
+//
+//    var arr = ['h','e','l','l','o'];
+//    var b= arr.every(function (x) {
+//        return x.charCodeAt(0);
+//    })
+//console.log(arr);
 
-Person.prototype.getName =function () {
-    return this.name;
-}
-console.log(Person.prototype);
-//console.log(p1.prototype);
-//console.log(p1.getName());
-console.log(p2.getName());
-//console.log("prototype" in Person);
-//console.log("prototype" in p1);
-//console.log(p1);
 //
 //
-//function fn() {
 //
+//var a={
+//
+//};
+//var b={k:'b'};
+//var c={};
+//
+//     a[b]=123;
+//// 上面这句 -> 相当于 下面这句
+//    a={
+//        object : 123
 //    }
-//console.log(fn.prototype);
+//
+//
+//a[c]=456;
+//// 上面这句 -> 相当于 下面这句
+//
+//a={
+//    object : 456
+//}
+//
+//console.log(a.c);
+//console.log(a);
+//console.log(a[b]);
+
+    func();
+    var func = function () {
+    console.log("会不会被调用");
+    }
+
+    //以上如上代码将报错
+    //模拟提升的过程
+//    var func;
+//    func();                 //找不到这个函数
+//    func = function () {
+//    console.log("会不会被调用");
+//    }
+
 </script>
 
 
