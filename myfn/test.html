@@ -26,10 +26,20 @@
 <div id="div">
 </div>
 
+<!--// p{我是第$个}*8-->
+
+<p>我是第1个</p>
+<p>我是第2个</p>
+<p>我是第3个</p>
+<p>我是第4个</p>
+<p>我是第5个</p>
+<p>我是第6个</p>
+<p>我是第7个</p>
+<p>我是第8个</p>
+
 <button>1</button>
-<!--<script src="js/07-itcast-模块化.js"></script>-->
-<!--<script src="js/05-itcast-运动框架.js"></script>-->
-<!--<script src="js/06-itcast_链式访问-.js"></script>-->
+<input type="date">
+<input type="email">
 <script>
 
 
@@ -71,45 +81,98 @@
 //
 //
 //
-//var a={
-//
-//};
-//var b={k:'b'};
-//var c={};
-//
-//     a[b]=123;
-//// 上面这句 -> 相当于 下面这句
-//    a={
-//        object : 123
-//    }
-//
-//
-//a[c]=456;
-//// 上面这句 -> 相当于 下面这句
-//
+    var a={
+
+    };
+    var b={k:'b'};
+    var c={};
+    a[b]=123; //a.["{k:'b'}"] = 123;
+    a[c]=456; //a.["{}"] = 456;
+    //a[{}]= [object object]
+
+    //a[{}] =
+
+//    console.log(a[b]);
+
+//console.log(a.c);
+//console.log(a);
+// 上面这句 -> 相当于 下面这句
+
 //a={
 //    object : 456
 //}
-//
-//console.log(a.c);
-//console.log(a);
-//console.log(a[b]);
 
-    func();
-    var func = function () {
-    console.log("会不会被调用");
-    }
-
-    //以上如上代码将报错
-    //模拟提升的过程
-//    var func;
-//    func();                 //找不到这个函数
-//    func = function () {
-//    console.log("会不会被调用");
-//    }
 
 </script>
 
+<script>
+
+    var num =10;
+    function fn1() {
+        var num =20;
+//         num =20;
+
+        function fn2() {
+            num =30;
+        }
+        fn2();
+    }
+
+    fn1();
+//    console.log(num);
+
+    // var num =20;-> num = 10
+    // num =20; -> num = 30
+    
+
+</script>
+
+<script>
+
+//    for(var i=0;i<10;i++){
+//
+//        setTimeout(function () { //最后执行
+//            console.log(i);
+//        }(),2 );
+//
+//        console.log("~~");
+//    }
+
+
+
+    for(var i=0;i<10;i++){
+
+        setTimeout(function (i) { //最后执行
+            return function () {
+//                console.log(i);
+            }
+        }(i),2);
+//        console.log("~~");
+
+    }
+
+    //    for (var i = 0; i < 10; i++) {
+//
+//        !function() {
+//            console.log(i);
+//        }()
+//    }
+</script>
+
+<script>
+
+    var arr =document.getElementsByTagName("p");
+    for (var i = 0; i < 8; i++) {
+        arr[i].addEventListener("click",function (j) {
+            return function () {
+                console.log("我是第" + (j+1) + "个P");
+            }
+
+        }(i))
+    }
+
+
+</script>
 
 </body>
 </html>
