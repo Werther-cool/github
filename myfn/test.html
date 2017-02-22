@@ -176,9 +176,16 @@
 
 <script>
 
-    var a =[0];
 
-    console.log([0] == false);
+
+    var obj = {0:"name",1:"asd",length:2};
+
+    var arr2 = ["name","asd"];
+    var arr = Array.prototype.slice.call(obj);
+
+    console.log(arr);
+    console.log(arr2);
+    console.log(Array.isArray(arr));
 
 </script>
 
