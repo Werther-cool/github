@@ -12,17 +12,36 @@
 <p>2</p>
 <p>3</p>
 <p>4</p>
+<div id="div">
+
+    123
+</div>
 </body>
 
-<script src="day01.js"></script>
-<!--<script src="day01练习.js"></script>-->
+<script src="day02-my.js"></script>
+<!--<script src="day02-t.js"></script>-->
+<!--<script src="../js-%20可学习框架/jquery-2.0.0.js"></script>-->
+<!--<script src="day01-t.js"></script>-->
 <script>
+/*
+    var obj1 ={name : "xm"};
+var obj2 ={age : 12};
+var obj3 = {sex : "female"};
+var obj4 ={asd:"asdasd"};
+myQuery.extend(obj1,obj2,obj3,obj4);*/
 
-    console.log($(function () {
+/*
+ 1、appendTo ==> 把所有的元素，添加到指定的元素中
+ 2、append ==> 给所有的元素，添加新的内容
+ 3、prependTo ==> 把所有的元素，添加到指定元素中的最前面
+ 4、prepend ==> 给所有的元素的最前面，添加新的元素
+ */
 
-    }));
-    console.log($("p"));
-    //    console.log($(".asd"));
+
+console.log($('p').prepend($('div')));
+
+//    console.log($(".asd").empty());
+//    console.log($(".asd").html(123));
 
 </script>
 </html>

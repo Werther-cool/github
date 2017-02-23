@@ -590,7 +590,7 @@
 				// A special, fast, case for the most common use of each
 			} else {
 				if ( isArray ) {
-					for ( ; i < length; i++ ) {
+					for ( ; i < length; i++ ) {111
 						value = callback.call( obj[ i ], i, obj[ i ] );
 
 						if ( value === false ) {
