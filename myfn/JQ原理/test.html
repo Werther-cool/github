@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border:0;
+            list-style: none;
+        }
+        #div{
+            width:500px;
+            height:400px;
+            background-color: coral;
+        }
+    </style>
 </head>
 <body>
 <span>22</span>
@@ -18,7 +30,8 @@
 </div>
 </body>
 
-<script src="day02-my.js"></script>
+<!--<script src="day03-my.js"></script>-->
+<script src="day03-t.js"></script>
 <!--<script src="day02-t.js"></script>-->
 <!--<script src="../js-%20可学习框架/jquery-2.0.0.js"></script>-->
 <!--<script src="day01-t.js"></script>-->
@@ -38,10 +51,15 @@ myQuery.extend(obj1,obj2,obj3,obj4);*/
  */
 
 
-console.log($('p').prepend($('div')));
-
 //    console.log($(".asd").empty());
 //    console.log($(".asd").html(123));
+//
+//console.log($('div').attr({
+//    'abc': '123',
+//    'def': '456'
+//}));
+
+console.log($('div').prop('name', 'nj'))
 
 </script>
 </html>
