@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数据单项绑定</title>
+  </head>
+  <body ng-app ='app'>
+
+    <div ng-controller = 'WerController'>
+
+        <p>{{name}} {{age}}</p>
+
+        <p ng-bind =name></p>
+
+        <p ng-cloak>{{name}}</p>
+
+        <p ng-bind-template = '{{name}}{{age}}'></p>
+
+
+    </div>
+
+
+
+
+
+  </body>
+
+  <script src="angular.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+      var app = angular.module('app',[]);
+      app.controller('WerController',['$scope',function ($scope) {
+        $scope.name = 'Werther';
+        $scope.age = 20;
+
+      }])
+
+
+
+  </script>
+</html>

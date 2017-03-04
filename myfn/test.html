@@ -10,7 +10,10 @@
             border:0;
             list-style: none;
         }
-        div{
+        #box{
+            position: absolute;
+            left: -200px;
+            top:200px;
             width: 200px;
             height: 400px;
             background: tan;
@@ -19,12 +22,50 @@
             width: 40px;
             background: green;
         }
+        #green{
+          position: absolute;
+          right:-20px;
+          top:100px;
+         width: 20px;
+         height: 80px;
+         background-color: green;
+
+        }
+        #green:hover{
+
+        }
     </style>
+    <script>
+        window.onload=function () {
+
+            var green = document.getElementById('green');
+            var box = document.getElementById('box');
+            box.onmouseover =function () {
+
+                box.style.left = "0";
+               green.style.left = "200px";
+
+            }
+
+            box.onmouseout  =function () {
+                box.style.left = "-200px";
+                green.style.right = "-20px";
+
+
+            }
+
+
+
+        }
+    </script>
 </head>
 <body>
+<!-- <div class="con"> -->
+  <div id="box">
+      <span id="green">green</span>
+  </div>
 
-<div id="div">
-</div>
+<!-- </div> -->
 
 <!--// p{我是第$个}*8-->
 
@@ -123,7 +164,7 @@
 
     // var num =20;-> num = 10
     // num =20; -> num = 30
-    
+
 
 </script>
 

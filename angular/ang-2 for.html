@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ang2</title>
+    <script src= "angular.js"></script>
+
+    <script type="text/javascript">
+
+      var app = angular.module('app',[]);
+
+      app.controller ('WerController',['$scope',function ($scope) {
+        $scope.name = 'Werther';
+        $scope.students = [
+          {name:'zs',age:18},
+          {name:'li',age:20}
+        ]
+      }])
+    </script>
+
+  </head>
+  <body ng-app = 'app' >
+    <ul ng-controller = 'WerController'>
+      <li>{{name}}</li>
+      <li>{{age}}</li>
+      <li ng-repeat = "(key,value) in course">{{key}} {{value}}</li>
+      <li ng-repeat = "value in students">{{value.name}} {{value.age}}</li>
+    </ul>
+  </body>
+</html>

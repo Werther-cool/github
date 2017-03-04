@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>angular</title>
+  </head>
+  <body ng-app='app'>
+    <div ng-controller = 'WerController'>
+
+      <h1>{{title}}</h1>
+      <form>
+        姓名: <input type="text" ng-model = 'userInfo.name'> <br>
+        密码: <input type="password" ng-model = 'userInfo.age'> <br>
+        <button ng-click = "login()">登入</button>
+
+      </form>
+
+    </div>
+
+  </body>
+  <script src="angular.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var app = angular.module('app',[]);
+    app.controller('WerController',['$scope',function ($scope) {
+      $scope.title = '用户注册';
+      $scope.userInfo = {} ;
+      $scope.login = function () {
+        alert($scope.userInfo.name + $scope.userInfo.age);
+      }
+
+    }])
+  </script>
+</html>
