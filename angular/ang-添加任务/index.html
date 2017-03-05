@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app= "app" ng-controller = 'WerController'>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/angular.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+</head>
+
+<body>
+<!--头部logo-->
+<div class="banner">
+    <img src="images/logo.png" alt="">
+</div>
+<!--添加内容导航-->
+<div class="nav">
+    <div class="nav_content">
+        <div class="nav_left fl">
+            <img src="images/logo.png" alt="">
+        </div>
+        <div class="nav_right">
+            <form action="#" ng-submit = "submit()">
+                <input type="text" ng-modul = 'task'>
+                <input type="submit" value="添加">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--内部列表-->
+<div class="content_list">
+
+    <div class="header">
+        <ul>
+            <li class="cur">待办事项</li>
+            <li>已完成事项</li>
+        </ul>
+    </div>
+
+    <div class="list_body">
+        <ul>
+            <li class="item" ng-repeat = "(key,value) in taskList">
+                <input type="checkbox" ng-checked = "value.check">
+                <span class="item_content" ng-bind = "value.name"></span>
+                <span class="del">删除</span>
+                <span class="detail">详情</span>
+            </li>
+
+            <li class="item">
+                <input type="checkbox">
+                <span class="item_content">内容内容内容</span>
+                <span class="del">删除</span>
+                <span class="detail">详情</span>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
