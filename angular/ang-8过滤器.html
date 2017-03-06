@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>filter</title>
+  </head>
+  <body ng-app ='app' ng-controller='WerController'>
+
+        <p>{{name|filterName}}</p>
+
+
+    <script src="angular.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var app = angular.module('app',[]);
+      app.controller('WerController',["$scope",function ($scope) {
+          $scope.name = "hello";
+      }])
+      app.filter("filterName",function () {
+        return function (input) {
+          console.log(input + "world");          
+        }
+      })
+    </script>
+  </body>
+</html>

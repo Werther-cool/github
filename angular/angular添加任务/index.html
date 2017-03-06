@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--3.到视图当中绑定模块-->
-<html lang="en" ng-app="app" ng-controller="taskController">
+<html lang="en" ng-app = 'app' ng-controller ='WerController'>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,7 +9,6 @@
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/index.js"></script>
-
 </head>
 
 <body>
@@ -29,7 +28,7 @@
         </div>
         <div class="nav_right">
             <!--5.使用angualr监听表单提交  ng-submit="submit()" 到控制器模型当中实现submit方法 -->
-            <form action="#" ng-submit="submit()">
+            <form action="#" ng-submit = "submit()">
                 <input type="text" ng-modul="task">
                 <input type="submit" value="添加">
             </form>
@@ -51,10 +50,10 @@
     <div class="list_body active">
         <ul>
             <!--7.遍历$scope.taskList-->
-            <li class="item" ng-repeat="(key,taskItem) in taskList">
+            <li class="item" ng-repeat = "(key,value) in itemList">
                 <!---->
-                <input type="checkbox" ng-checked="taskItem.check">
-                <span class="item_content" ng-bind="taskItem.name"></span>
+                <input type="checkbox" >
+                <span class="item_content" ng-bind = "value.name"></span>
                 <span class="del">删除</span>
                 <span class="detail">详情</span>
             </li>
