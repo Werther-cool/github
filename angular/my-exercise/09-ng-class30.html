@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat 指令</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body ng-app='myApp'>
+    <input ng-model="lastname">
+    <ul ng-controller='WerController'>
+        <li ng-repeat="item in student track by $index" ng-class="{red: (lastname != '') && item.startsWith(lastname)}">{{item}}</li>
+    </ul>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp', [])
+        app.controller('WerController', ['$scope', function($scope) {
+            $scope.student = ['小明', '小红', '小黑', '小王', '小明', '大名'];
+
+
+        }])
+
+        // angular.module('myApp', [])
+        //   .controller('ListController', ['$scope', function($scope) {
+        //     $scope.students = ['胡shit', '赵四', '网商务', '李三', '李三', '李三'];
+        //
+        //
+        //   }]);
+    </script>
+</body>
+
+</html>
