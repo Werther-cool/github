@@ -11,7 +11,7 @@
 	//配置路由
 	app.config(["$routeProvider", function($routeProvider) {
 
-		$routeProvider.when('#/:status', {
+		$routeProvider.when('/:status?', {
 				templateUrl: "main_tpl",
 				controller: "WerController",
 			})
