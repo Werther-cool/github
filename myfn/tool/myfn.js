@@ -149,6 +149,7 @@ var myfn = {
     cookie: {
         set: function (name, value) {
             // 缓存过期时间
+            console.log("set");
             let Days = 30
             let exp = new Date()
             exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000)
