@@ -9,13 +9,12 @@
 
 </head>
 <body>
-    <div id="chartmain" style="width:600px; height: 400px;"></div>
+    <div id="chartmain" style="width:1000px; height: 600px;"></div>
     <script type="text/javascript" src="echarts.simple.min.js"></script>
+    <script type="text/javascript" src="dark.js"></script>
     <script>
-       
-      
      var  option = {
-        color: ['#3398DB'],
+        color: ['#17ffd9'],
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -31,7 +30,8 @@
         xAxis : [
             {
                 type : 'category',
-                data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                name:'月',
+                data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'],
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -39,20 +39,37 @@
         ],
         yAxis : [
             {
-                type : 'value'
+                type : 'value',
+                name:'万元',
             }
         ],
+        visualMap: {
+                show: false,
+                min: 0,
+                max: 50,
+                dimension: 0,
+                inRange: {
+                    color: ['#4a657a', '#308e92', '#b1cfa5', '#f5d69f', '#f5898b', '#ef5055']
+                }
+                },
         series : [
             {
-                name:'直接访问',
+                name:'123',
                 type:'bar',
                 barWidth: '60%',
-                data:[10, 52, 200, 334, 390, 330, 220]
+                label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                data:[34000.9, 44523.9, 54523.9, 64523.9, 74523.9, 75523.9, 76523.9,77523.9,85523.9,86523.9]
             }
-        ]
+        ],
+      
     };
         //初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chartmain'));
+        var myChart = echarts.init(document.getElementById('chartmain'),'dark');
 
         //使用制定的配置项和数据显示图表
         myChart.setOption(option);
