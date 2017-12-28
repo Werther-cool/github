@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚滚屏的书写</title>
+    <style type="text/css">
+        /*清除样式*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%; /*层层上推之后得到HTML高度要给定100%*/
+            /*body的高度是HTML高度的百分比*/
+            overflow: hidden; /*隐藏其他的屏幕*/
+        }
+
+        /*body{*/
+        /*height: 100%;*/
+        /*}*/
+        .container {
+            width: 100%; /*加上这行代码，因为添加定位以后它脱标（脱离标准流）了，就没有高度了*/
+            height: 100%; /*container的高度是来自body的*/
+            position: absolute; /*page的父盒子container要能移动，带动page的移动，则要给container进行定位*/
+            top: 0;
+            /*top:-100%;         !*查看第二个屏幕*!*/
+            left: 0;
+
+        }
+
+        .page {
+            width: 100%; /* 百分比参考的永远是父盒子*/
+            height: 100%; /*page的高度为container的百分百，所以查看container的高度*/
+            background-color: pink;
+        }
+
+        .page1 {
+            background-color: blue;
+        }
+
+        .page2 {
+            background-color: red;
+        }
+
+        .page3 {
+            background-color: yellow;
+        }
+
+        .page4 {
+            background-color: green;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            display: block;
+            background: #fff;
+            
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/scrollreveal.js"></script>
+    <script src="js/jquery.easie.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var currentPage = 0;      //当前的页面数
+            var lock = true;        //函数节流，给定的一个变量
+            $(document).mousewheel(function (e, delta) {
+                if (lock) {
+                    currentPage = currentPage - delta;
+                    if (currentPage < 0) {
+                        currentPage = 0;
+                    }
+                    if (currentPage > 4) {
+                        currentPage = 4;
+                    }
+                    console.log(currentPage);
+                    //    让container进行动画
+                    $(".container").animate(
+                            {
+                                "top": currentPage * -100 + "%"   //通过负的100%的倍数来获取到其他的屏幕内容
+                            }
+                            , 300         //时间
+                            , "easieEaseOutCubic"          //添加easie.js类库后添加该运动方式名称
+                    );
+                    // $(".container").css({"top":currentPage * -100 + "%"});
+                    //函数节流
+                    lock = false;
+                    //设置一个定时器，当这个时间到了以后，Lock又恢复为true
+                    setTimeout(function(){
+                        lock=true;
+                    },1000);
+                }
+            });
+
+
+                    var config = {
+                reset         : true,  //  鼠标滚动时，动画开关默认false关闭
+                origin        : 'top', //动画开始的方向
+                duration      : 2000,  //动画持续时间
+                delay         : 0,     //延迟
+                rotate        : { x: 0, y: 0, z: 0 },//过渡到0的初始角度
+                opacity       : 1,                   //初始透明度
+                scale         : 0.1,                 //缩放
+                easing        : 'ease' 
+                //缓动 'ease', 'ease-in-out', 'linear‘…
+                };
+
+                window.sr = ScrollReveal();
+                sr.reveal('.page',config);
+                });
+    </script>
+</head>
+<body>
+<div class="container">
+    <!--div.page.page$*5+Tab键输出下面的内容-->
+    <!--page类是一个公共类-->
+    <div class="page page0 animated  bounce">
+            <span>123</span>
+        0</div>
+    <div class="page page1 animated  bounce"> <span>123</span></div>
+    <div class="page page2 animated  bounce"> <span>123</span></div>
+    <div class="page page3 animated  bounce"> <span>123</span></div>
+    <div class="page page4 animated  bounce"> <span>123</span>4</div>
+</div>
+</body>
+</html>
