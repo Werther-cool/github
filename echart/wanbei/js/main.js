@@ -8,8 +8,8 @@ $(document).ready(function () {
             if (currentPage < 0) {
                 currentPage = 0;
             }
-            if (currentPage > 4) {
-                currentPage = 4;
+            if (currentPage > 5) {
+                currentPage = 5;
             }
             console.log(currentPage);
            

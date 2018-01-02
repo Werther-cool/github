@@ -20,16 +20,16 @@ data_y09 = [34000.9,44523.9]
 data_x10 =  ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'],
 data_y10 = [34000.9, 44523.9, 54523.9, 64523.9, 74523.9, 75523.9, 76523.9, 77523.9, 85523.9, 86523.9],
 pieData = [
-    { name:"陈**",value:10},
-    { name:"li**",value:9},
-    { name:"as**",value:8},
-    { name:"12**",value:7},
-    { name:"ss**",value:6},
-    { name:"a**",value:5},
-    { name:"ll**",value:4},
-    { name:"o**",value:3},
-    { name:"l**",value:2},
-    { name:"asd**",value:2},
+    { name:"陈** 13112345678 10万元",value:10},
+    { name:"li** 13112345678 10万元",value:9},
+    { name:"as**  13112345678 10万元",value:8},
+    { name:"12** 13112345678 10万元",value:7},
+    { name:"ss** 13112345678 10万元",value:6},
+    { name:"a** 13112345678 100万元",value:5},
+    { name:"ll** 13112345678 1000万元",value:4},
+    { name:"o** 13112345678 1000万元",value:3},
+    { name:"l** 13112345678 1000万元",value:2},
+    { name:"asd** 13112345678 100万元",value:2},
 ]
 
 ;
@@ -37,7 +37,7 @@ var option1 =
 {
     grid: {
         left: '3%',
-        right: '4%',
+        right: '7%',
         bottom: '3%',
         containLabel: true
     },
@@ -51,7 +51,7 @@ var option1 =
         }
     },
     xAxis: [{
-        name: '月',
+        name: '年月',
         splitLine: {
             show: false
         },
@@ -189,7 +189,7 @@ var option3 =
 {
     grid: {
         left: '3%',
-        right: '4%',
+        right: '7%',
         bottom: '3%',
         containLabel: true
     },
@@ -203,7 +203,7 @@ var option3 =
         }
     },
     xAxis: [{
-        name: '月',
+        name: '年月',
         splitLine: {
             show: false
         },
@@ -354,13 +354,13 @@ var  option5 =
     },
     grid: {
         left: '3%',
-        right: '4%',
+        right: '7%',
         bottom: '3%',
         containLabel: true
     },
     xAxis : [
         {
-            name: '月',
+            name: '年月',
             splitLine: {
                 show: false
             },
@@ -643,7 +643,7 @@ var option9 =
 {
     grid: {
         left: '3%',
-        right: '4%',
+        right: '7%',
         bottom: '3%',
         containLabel: true
     },
@@ -657,7 +657,7 @@ var option9 =
         }
     },
     xAxis: [{
-        name: '月',
+        name: '年月',
         splitLine: {
             show: false
         },
@@ -817,33 +817,39 @@ var option0 = {
         }
     },
     series : [{
-        name: '类型',
+        name: '详细信息',
         type: 'pie',
         radius : '55%',
-        center: ['50%', '60%'],
+        center: ['28%', '50%'],
         data:pieData,
         itemStyle: {
-            // emphasis: {
-            //     shadowBlur: 10,
-            //     shadowOffsetX: 0,
-            //     shadowColor: 'rgba(0, 0, 0, 0.5)'
-            // },
             normal:{ 
-                label:{ 
-                    show: true, 
-                    formatter: '{b} : {c} ({d}%)' 
-                }, 
-                labelLine :{show:true} 
+                // label:{ 
+                //     show: false, 
+                //     // formatter: '{b} : {c} ({d}%)',
+                //     color:'#fff' 
+                // }, 
+                labelLine :{
+                    show:true,
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.8)'
+                    },
+                } 
             },
-            label: {
-                normal: {
-                    show: false
+        },
+        label:{           
+            normal:{
+                show:true,
+                // position:'inner', //标签的位置
+                textStyle : {
+                    fontWeight : 300 ,
+                    fontSize : 14,    //文字的字体大小
+                    color:'#fff'
                 },
-                emphasis: {
-                    show: true
-                }
-            }, 
-        }
+                formatter:'{d}%', 
+            }
+        },
+      
     }],
     color:['#17ff63','#d1ff17','#ffb017','#ff6917','#ee2213','#f74791','#c519df','#5817ff','#1085d7','#39b7a2']
 };

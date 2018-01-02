@@ -9,34 +9,71 @@
 
 </head>
 <body>
-    <div id="chartmain" style="width:600px; height: 400px;"></div>
-    <script type="text/javascript" src="echarts.simple.min.js"></script>
+    <div id="chartmain" style="width:900px; height: 400px;"></div>
+    <script type="text/javascript" src="echarts.common.min.js"></script>
     <script type="text/javascript" src="dark.js"></script>
     <script type="text/javascript" src="infographic.js"></script>
     <script>
-             //指定图标的配置和数据
-             var option = {
-            title:{
-                text:'ECharts 数据统计'
-            },
-            tooltip:{},
-            legend:{
-                data:['用户来源']
-            },
-            xAxis:{
-                data:["Android","IOS","PC","Ohter"]
-            },
-            yAxis:{
 
-            },
-            series:[{
-                name:'访问量',
-                type:'bar',
-                data:[500,200,360,100]
-            }]
-        };
+        // 指定图表的配置项和数据
+        var option = {  
+           title : {  
+               text: '公里总里程',   
+               x:'left',
+               textStyle:{
+                   color:'#FFFFFF',
+                   fontSize:25
+               }
+           },  
+           tooltip : {  
+               trigger: 'item',  
+               formatter: "{a} <br/>{b} : {c} KM"  
+           },  
+           legend: {  
+               orient : 'vertical',  
+               x : 'left',  
+               top:40,
+               itemWidth:70,
+               itemHeight:30,
+               formatter: '{name}',
+               textStyle:{
+                   color: '#FFFFFF'
+               },
+               data:[{name:'高速50KM',icon:'rect'},{name:'一级150KM',icon:'rect'},{name:'二级150KM',icon:'rect'},{name:'三级100KM',icon:'rect'},{name:'四级50KM',icon:'rect'}]  }
+           ,   
+           calculable : true,  
+           series : [  
+               {  
+                   name:'公里总里程',  
+                   type:'pie',  
+                   radius : '70%',//饼图的半径大小  
+                   center: ['60%', '60%'],//饼图的位置 
+                   label:{            //饼图图形上的文本标签
+                           normal:{
+                               show:true,
+                               position:'inner', //标签的位置
+                               textStyle : {
+                                   fontWeight : 300 ,
+                                   fontSize : 16    //文字的字体大小
+                               },
+                               formatter:'{d}%'  
+                           }
+                       },
+                   data:[  
+                       {value:50,name:'高速50KM',itemStyle:{normal:{color:'#FE0000'}}},  
+                       {value:150,name:'一级150KM',itemStyle:{normal:{color:'#F29700'}}},  
+                       {value:150,name:'二级150KM',itemStyle:{normal:{color:'#02B0ED'}}}, 
+                       {value:100,name:'三级100KM',itemStyle:{normal:{color:'#55E87D'}}},
+                       {value:50,name:'四级50KM',itemStyle:{normal:{color:'#FFE200'}}},
+                   ]
+               }  
+           ]  
+       };
+
+           // 使用刚指定的配置项和数据显示图表。
+          
         //初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chartmain'),'infographic');
+        var myChart = echarts.init(document.getElementById('chartmain'));
 
         //使用制定的配置项和数据显示图表
         myChart.setOption(option);

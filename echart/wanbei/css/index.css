@@ -89,3 +89,34 @@ body{
     text-align: center;
     margin: 10px auto;
 }
+.pie_block{
+    width: 450px;
+    float: left;
+}
+.pie_block p{
+    width: 100%;
+
+	font-family: MicrosoftYaHei;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38px;
+	letter-spacing: 0px;
+    color: #ffffff;
+    text-align: center;
+}
+.block{
+    width: 900px;
+    margin: 30px auto;
+}
+.pie_block .pie_price{
+
+    font-size: 36px;
+    background-image: -webkit-gradient(linear, left center, right center, from(#17ffd9), to(#f9ff27));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
+.page3 .bt_p{
+    color: #fff;
+}
