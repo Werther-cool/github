@@ -32,11 +32,11 @@ body{
    left: 0;
    z-index:1;
    transition: all 2s;
-   opacity: 0;
+    display: none;
 }
 .page_on{
     z-index: 99;
-    opacity: 1;
+    display: block;
     
 }
 /* .page1 {
@@ -110,7 +110,6 @@ body{
     margin: 30px auto;
 }
 .pie_block .pie_price{
-
     font-size: 36px;
     background-image: -webkit-gradient(linear, left center, right center, from(#17ffd9), to(#f9ff27));
     -webkit-background-clip: text;
@@ -119,4 +118,12 @@ body{
 }
 .page3 .bt_p{
     color: #fff;
+}
+.page_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.page7_img{
+    margin: 0 auto;
 }
