@@ -193,7 +193,7 @@ var option3 = {
     series : [{
         name: '详细信息',
         type: 'pie',
-        radius : '60%',
+        radius : '70%',
         center: ['28%', '50%'],
         data:pieData03,
         itemStyle: {
@@ -249,8 +249,8 @@ var option4 = {
     series : [{
         name: '详细信息',
         type: 'pie',
-        radius : '60%',
-        center: ['28%', '50%'],
+        radius : '70%',
+        center: ['35%', '50%'],
         data:pieData04,
         itemStyle: {
             normal:{ 
@@ -281,7 +281,7 @@ var option4 = {
         },
       
     }],
-    color:['#ffcb2d','#b245ff','#ff65b8']
+    color:['#ffcb2d','#b245ff','#ff70b8']
 };
 
 //初始化echarts实例

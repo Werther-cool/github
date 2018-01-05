@@ -38,10 +38,12 @@ html, body {
 /* swiper css end */
 
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
-  right: 30px;
+  right: 50px;
+  background-image:url('../images/right.png');
 }
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
-  left: 30px;
+  left: 50px;
+  background-image:url('../images/left.png');
 }
 .swiper-slide{
   background: url('../images/background.jpg') no-repeat left top;
@@ -78,4 +80,30 @@ html, body {
   color: #ffffff;
   text-align: center;
   line-height: 75px;
+}
+.f-event{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.event{
+  width: 450px;
+  height: 220px;
+  text-align: center;
+}
+.event span{
+	font-family: BritannicBold;
+	font-size: 60px;
+  color: #ffe400;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+.event em{
+  color: #fff;
+  font-size:32px; 
+}
+.page7 span{
+  color:#67ff96;
+
 }
