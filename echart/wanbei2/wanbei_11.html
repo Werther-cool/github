@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide page0">
+
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                <h3 >出借人数据</h3>
+                <p class="time">截止于2017年11月30日</p>
+            </div>
+            <div class="canvas" id="chartmain01" style="width:700px; height: 50%;"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                <h3 >借款人数据</h3>
+                <p class="time">截止于2017年11月30日</p>
+            </div>
+            <div class="canvas" id="chartmain02" style="width:700px; height: 50%;"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                <h3 >前十大借款人数据</h3>
+                <p class="time">截止于2017年11月30日</p>
+            </div>
+            <div class="canvas" id="chartmain03" style="width:800px; height: 60%;"></div>            
+        </div>
+        <div class="swiper-slide"> 
+            <div class="title">
+                <h3 >逾期金额数据</h3>
+                <p class="time">截止于2017年11月30日</p>
+            </div>
+            <div class="canvas" id="chartmain04" style="width:800px; height: 60%;"></div>
+        </div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide page8"></div>
+     
+      </div>
+ 
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/canvas.js"></script>
+
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        mousewheel: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+
+    </script>
+</html>

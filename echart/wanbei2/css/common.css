@@ -1,0 +1,477 @@
+[v-cloak] {
+  display: none;
+}
+
+.redpoint {
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 0.24rem;
+  left: 2rem;
+}
+
+.placeholeder {
+  height: 1rem;
+  background: #fff;
+}
+
+.menu {
+  height: 1rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 500;
+}
+
+.menu li {
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+
+.menu li a {
+  padding-top: 0.16rem;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  height: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  display: block;
+}
+
+.menu li span {
+  margin-top: 0.04rem;
+  font-size: 10px;
+  color: #999;
+  display: block;
+}
+
+.menu li .span_on {
+  color: #47aedf;
+}
+
+.menu li:first-child a img {
+  width: 0.5rem;
+}
+
+.menu li:nth-of-type(2) span {
+  margin-top: 0.06rem;
+}
+
+.menu li:nth-of-type(3) span {
+  margin-top: 0.06rem;
+}
+
+.menu li:nth-of-type(2) a img {
+  width: 0.35rem;
+}
+
+.menu li:nth-of-type(3) a img {
+  width: 0.39rem;
+}
+
+.menu li:nth-of-type(4) a img {
+  width: 0.39rem;
+}
+
+@media screen and (max-width:321px) {
+  .menu li a {
+    padding-top: 0.05rem;
+  }
+}
+
+@media screen and (min-width:410px) {
+  .menu li span {
+    font-size: 12px;
+  }
+}
+
+.warning {
+  background: #333;
+  opacity: 0.9;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  text-align: center;
+  font: 14px;
+  color: #fff;
+  padding: 0.4rem;
+}
+
+.common_back {
+  height: 0.9rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 0.9rem;
+  display: block;
+  background: #47aedf url(/phone/public/new/images/back@1x.png) no-repeat 20px center;
+}
+
+
+/* 通用 */
+
+.list_more {
+  width: 100%;
+  background: #fff;
+  height: 1rem;
+  text-align: center;
+  display: block;
+  line-height: 1rem;
+}
+
+.list_more img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.black_overlay {
+  display: block;
+  /*display: none;*/
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.border_arrow {
+  width: 0.12rem;
+  height: 0.12rem;
+  display: inline-block;
+  border-top: 0.01rem solid #fff;
+  border-right: 0.01rem solid #fff;
+  transform: rotateZ(45deg);
+  vertical-align: middle;
+  position: relative;
+  left: -0.02rem;
+  top: -0.01rem;
+}
+
+.deepRed {
+  color: #ff174e;
+}
+
+.home_black_overlay {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  /*background: black;*/
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.common_btn {
+  position: absolute;
+  right: 0.2rem;
+}
+
+.com_back_btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.2rem;
+  height: 0.9rem;
+  display: inline-block
+}
+
+.left_btn {
+  position: absolute;
+  left: 0.2rem;
+  width: 1rem;
+  height: 0.8rem;
+}
+
+.warning {
+  background: #333;
+  opacity: 0.9;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  text-align: center;
+  font: 14px;
+  color: #fff;
+  padding: 0.4rem;
+  z-index: 999;
+}
+
+.common_back {
+  height: 0.9rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 0.9rem;
+  display: block;
+  background: #47aedf url(/phone/public/new/images/back@1x.png) no-repeat 20px center;
+}
+
+.cash {
+  position: fixed;
+  top: 4.5rem;
+  left: 0.75rem;
+  background: #fff;
+  display: block;
+  width: 6rem;
+  height: 3rem;
+}
+
+.cash_main {
+  height: 2.1rem;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  line-height: 2.1rem;
+  border-bottom: 0.01rem solid #ddd;
+}
+
+.cash_ft {
+  float: left;
+  height: 0.9rem;
+  width: 50%;
+  text-align: center;
+  line-height: 0.9rem;
+  color: #333;
+}
+
+.cash_confirm {
+  border-left: 0.01rem solid #ddd;
+  color: red;
+}
+
+.home_black_overlay {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  /*background:
+black;*/
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.red {
+  color: red;
+}
+
+.fz17 {
+  font-size: 17px;
+}
+
+.cash_input {
+  position: fixed;
+  top: 3.5rem;
+  left: 1rem;
+  width: 5.5rem;
+  height: 4.59rem;
+  background: #fff;
+  display: block;
+  padding: 0.34rem;
+}
+
+.cash_div {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.cash_div input {
+  height: 0.82rem;
+  width: 3.2rem;
+  border: 0.01rem solid #ddd;
+  margin-left: 0.42rem;
+  padding-left: 0.2rem;
+}
+
+.cash_loading {
+  text-align: center;
+}
+
+.cash_loading img {
+  margin: 4rem 0;
+}
+
+.redPoint {
+  width: 0.16rem;
+  height: 0.16rem;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  right: 0.55rem;
+  top: 0.22rem;
+}
+
+.pink {
+  color: #ff3c53;
+}
+
+.yellow {
+  color: #ffae00;
+}
+
+.ft15 {
+  font-size: 15px;
+}
+
+.ft12 {
+  font-size: 12px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.ft19 {
+  font-size: 19px;
+}
+
+.full_img {
+  width: 100%;
+  display: block;
+}
+.mt2{
+  margin-top:0.2rem; 
+}
+
+/***********************          通用基础        *****************************/
+
+a, img, button, input, textarea, div {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  /*清除ios默认的点击时产生的高亮区块   rgba(0,0,0,0)*/
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  /*定义盒子模型定义的宽度从边框计算*/
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Microsoft YaHei", "sans-serif";
+  font-size: 14px;
+  /*line-height: 1;*/
+  line-height: normal;
+  color: #333;
+  background: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+input, textarea {
+  border: 0;
+  outline: none;
+  resize: none;
+  /*清楚ios浏览器默认的样式*/
+  -webkit-appearance: none;
+}
+
+img {
+  vertical-align: middle;
+  /*清除3px的bug*/
+  border: 0;
+}
+
+.clearfix::after, .clearfix::before {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  display: block;
+}
+
+fieldset, img, input, button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+select, input {
+  vertical-align: middle;
+}
+
+select, input, textarea {
+  font-size: 12px;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/*防止拖动*/
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {}
+
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+s, i, em {
+  font-style: normal;
+  text-decoration: none;
+}
