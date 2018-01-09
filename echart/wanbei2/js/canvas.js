@@ -5,9 +5,10 @@ data_x02 = ["累计借款人数量","当期借款人数量"],
 data_y02 = [34000.9, 44523.9],
 
 pieData03 = [
-    { name:"逾期金额数据",value:20},
-    { name:"前十大借款人待还金额占比",value:12},
-    { name:"最大单一借款人待还金额占比",value:8},
+    {value:335, name:'其他借款人待还金额占比'},
+    {value:310, name:'最大单一借款人以外代还金额占比'},
+    {value:369, name:'最大单一借款人代还金额占比'},
+    {value:679, name:'前十大借款人待还金额占比'},
 ];
 pieData04 = [
     { name:"总金额",value:10},
@@ -284,6 +285,105 @@ var option4 = {
     color:['#ffcb2d','#b245ff','#ff70b8']
 };
 
+var option5 = {
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient:'vertical',
+        x: 'right',
+        y:'center',
+        data: pieData03,
+        textStyle:{
+            color:'#f5e109',
+            fontSize:20
+        }
+    },
+    calculable : false,
+    series : [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius : [0, '45%'],
+            center: ['35%', '50%'],
+            // for funnel
+            x: '20%',
+            width: '40%',
+            funnelAlign: 'right',
+            max: 1548,
+            itemStyle: {
+                normal:{ 
+                    labelLine :{
+                        show:true,
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        },
+                    } 
+                },
+            },
+            label:{           
+                normal:{
+                    show:true,
+                    position:'inner', //标签的位置
+                    textStyle : {
+                        fontWeight : 300 ,
+                        fontSize : 24,    //文字的字体大小
+                        color:'#fff'
+                    },
+                    formatter:'{d}%', 
+                }
+            },
+            data:[
+                {value:335, name:'其他借款人待还金额占比'},
+                {value:679, name:'前十大借款人待还金额占比'},
+             
+            ]
+        },
+        {
+            name:'访问来源',
+            type:'pie',
+            radius : ['55%', '75%'],
+            center: ['35%', '50%'],
+            // for funnel
+            x: '60%',
+            width: '35%',
+            funnelAlign: 'left',
+            max: 1048,
+            itemStyle: {
+                normal:{ 
+                    labelLine :{
+                        show:true,
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        },
+                    } 
+                },
+            },
+            label:{           
+                normal:{
+                    show:true,
+                    // position:'inner', //标签的位置
+                    textStyle : {
+                        fontWeight : 300 ,
+                        fontSize : 24,    //文字的字体大小
+                        color:'#fff'
+                    },
+                    formatter:'{d}%', 
+                }
+            },
+            data:[
+                {value:335, name:'其他借款人待还金额占比'},
+                {value:310, name:'最大单一借款人以外代还金额占比'},
+                {value:369, name:'最大单一借款人代还金额占比'},
+              
+            ]
+        }
+    ],
+    color:['#f5e109','#ff8150','#ff5611','#ff70b8','#b245ff']
+};
+
 //初始化echarts实例
 var myChart01 = echarts.init(document.getElementById('chartmain01'));
 var myChart02 = echarts.init(document.getElementById('chartmain02'));
@@ -295,5 +395,5 @@ var myChart04 = echarts.init(document.getElementById('chartmain04'));
 //使用制定的配置项和数据显示图表
 myChart01.setOption(option1);
 myChart02.setOption(option2);
-myChart03.setOption(option3);
+myChart03.setOption(option5);
 myChart04.setOption(option4);
