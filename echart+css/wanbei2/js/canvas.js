@@ -4,17 +4,40 @@ data_y01 = [50000, 12000],
 data_x02 = ["累计借款人数量","当期借款人数量"],
 data_y02 = [34000.9, 44523.9],
 
-pieData03 = [
+pieData03_len = [
     {value:335, name:'其他借款人待还金额占比'},
     {value:310, name:'最大单一借款人以外代还金额占比'},
     {value:369, name:'最大单一借款人代还金额占比'},
     {value:679, name:'前十大借款人待还金额占比'},
 ];
-pieData04 = [
-    { name:"总金额",value:10},
-    { name:"逾期金额（万元），5000笔数",value:9},
-    { name:"逾期90天以上（万元），600笔数",value:8},
+pieData03_in = [
+    {value:335, name:'其他借款人待还金额占比'},
+    {value:679, name:'前十大借款人待还金额占比'},
 ];
+pieData03_out = [
+    {value:335, name:'其他借款人待还金额占比'},
+    {value:310, name:'最大单一借款人以外代还金额占比'},
+    {value:369, name:'最大单一借款人代还金额占比'},
+];
+
+
+
+pieData04_in = [
+    { name:"未逾期",value:13},    
+    { name:"逾期金额（万元），5000笔数",value:9},
+]
+pieData04_out = [
+    { name:"未逾期",value:13},
+    { name:"逾期90天以内",value:5},
+    { name:"逾期90天以上（万元），600笔数",value:4},
+];
+pieData04_len =[
+    { name:"未逾期",value:13},    
+    { name:"逾期金额（万元），5000笔数",value:9},
+    { name:"逾期90天以内",value:5},
+    { name:"逾期90天以上（万元），600笔数",value:4},
+]
+
 
 var option1 = 
 {
@@ -177,124 +200,11 @@ var option3 = {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
-    textStyle:{
-        fontSize:24,
-
-    },
     legend: {
         orient:'vertical',
         x: 'right',
         y:'center',
-        data: pieData03,
-        textStyle:{
-            color:'#f5e109',
-            fontSize:20
-        }
-    },
-    series : [{
-        name: '详细信息',
-        type: 'pie',
-        radius : '70%',
-        center: ['28%', '50%'],
-        data:pieData03,
-        itemStyle: {
-            normal:{ 
-                // label:{ 
-                //     show: false, 
-                //     // formatter: '{b} : {c} ({d}%)',
-                //     color:'#fff' 
-                // }, 
-                labelLine :{
-                    show:true,
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.8)'
-                    },
-                } 
-            },
-        },
-        label:{           
-            normal:{
-                show:true,
-                // position:'inner', //标签的位置
-                textStyle : {
-                    fontWeight : 300 ,
-                    fontSize : 24,    //文字的字体大小
-                    color:'#fff'
-                },
-                formatter:'{d}%', 
-            }
-        },
-      
-    }],
-    color:['#ffffff','#f5e109','#ff8150']
-};
-var option4 = {
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-    textStyle:{
-        fontSize:24,
-
-    },
-    legend: {
-        orient:'vertical',
-        x: 'right',
-        y:'center',
-        data: pieData04,
-        textStyle:{
-            color:'#f5e109',
-            fontSize:20
-        }
-    },
-    series : [{
-        name: '详细信息',
-        type: 'pie',
-        radius : '70%',
-        center: ['35%', '50%'],
-        data:pieData04,
-        itemStyle: {
-            normal:{ 
-                // label:{ 
-                //     show: false, 
-                //     // formatter: '{b} : {c} ({d}%)',
-                //     color:'#fff' 
-                // }, 
-                labelLine :{
-                    show:true,
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.8)'
-                    },
-                } 
-            },
-        },
-        label:{           
-            normal:{
-                show:true,
-                // position:'inner', //标签的位置
-                textStyle : {
-                    fontWeight : 300 ,
-                    fontSize : 24,    //文字的字体大小
-                    color:'#fff'
-                },
-                formatter:'{d}%', 
-            }
-        },
-      
-    }],
-    color:['#ffcb2d','#b245ff','#ff70b8']
-};
-
-var option5 = {
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-    legend: {
-        orient:'vertical',
-        x: 'right',
-        y:'center',
-        data: pieData03,
+        data: pieData03_len,
         textStyle:{
             color:'#f5e109',
             fontSize:20
@@ -335,11 +245,7 @@ var option5 = {
                     formatter:'{d}%', 
                 }
             },
-            data:[
-                {value:335, name:'其他借款人待还金额占比'},
-                {value:679, name:'前十大借款人待还金额占比'},
-             
-            ]
+            data:pieData03_in
         },
         {
             name:'访问来源',
@@ -373,15 +279,103 @@ var option5 = {
                     formatter:'{d}%', 
                 }
             },
-            data:[
-                {value:335, name:'其他借款人待还金额占比'},
-                {value:310, name:'最大单一借款人以外代还金额占比'},
-                {value:369, name:'最大单一借款人代还金额占比'},
-              
-            ]
+            data:pieData03_out
         }
     ],
-    color:['#f5e109','#ff8150','#ff5611','#ff70b8','#b245ff']
+    color:["#ff8150",
+        "#f5e109",
+        "#88e64a",
+        '#39d016',]
+};
+
+var option4 = {
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient:'vertical',
+        x: 'right',
+        y:'20%',
+        data: pieData04_len,
+        textStyle:{
+            color:'#f5e109',
+            fontSize:20
+        }
+    },
+    calculable : false,
+    series : [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius : [0, '45%'],
+            center: ['35%', '50%'],
+            // for funnel
+            x: '18%',
+            width: '40%',
+            funnelAlign: 'right',
+            max: 1548,
+            itemStyle: {
+                normal:{ 
+                    labelLine :{
+                        show:true,
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        },
+                    } 
+                },
+            },
+            label:{           
+                normal:{
+                    show:true,
+                    position:'inner', //标签的位置
+                    textStyle : {
+                        fontWeight : 300 ,
+                        fontSize : 24,    //文字的字体大小
+                        color:'#fff'
+                    },
+                    formatter:'{d}%', 
+                }
+            },
+            data:pieData04_in
+        },
+        {
+            name:'访问来源',
+            type:'pie',
+            radius : ['55%', '75%'],
+            center: ['35%', '50%'],
+            // for funnel
+            x: '60%',
+            width: '35%',
+            funnelAlign: 'left',
+            max: 1048,
+            itemStyle: {
+                normal:{ 
+                    labelLine :{
+                        show:true,
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        },
+                    } 
+                },
+            },
+            label:{           
+                normal:{
+                    show:true,
+                    // position:'inner', //标签的位置
+                    textStyle : {
+                        fontWeight : 300 ,
+                        fontSize : 24,    //文字的字体大小
+                        color:'#fff'
+                    },
+                    formatter:'{d}%', 
+                }
+            },
+            data:pieData04_out
+        }
+    ],
+    color:['#9c28ee','#555cf1','#ff65b8','#27c9f2']
 };
 
 //初始化echarts实例
@@ -395,5 +389,5 @@ var myChart04 = echarts.init(document.getElementById('chartmain04'));
 //使用制定的配置项和数据显示图表
 myChart01.setOption(option1);
 myChart02.setOption(option2);
-myChart03.setOption(option5);
+myChart03.setOption(option3);
 myChart04.setOption(option4);
