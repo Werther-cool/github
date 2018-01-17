@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: MicrosoftYaHei;
+}
+ul, ol {
+
+    list-style: none;
+  }
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+  s, i, em {
+    font-style: normal;
+    text-decoration: none;
+  }
+.clearfix::after, .clearfix::before {
+    clear: both;
+    content: '.';
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+  }
+.banner{
+    background: url('images/banner_bg.jpg') no-repeat center top;
+    width: 100%;
+    height: 364px;
+    background-size: cover; 
+}
+.banner_con{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #444444;
+    font-size: 18px;
+}
+.banner_con h2{
+    font-size: 36px;
+}
+.banner_con p{
+    padding-left: 20px;
+}
+.banner_event{
+    color: #ec8000;
+    font-size: 24px;
+    width: 33%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:40px; 
+}
+.banner_event span{
+    margin-top: 5px;
+}
+.pilou_con{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top:50px; 
+    padding-bottom: 30px;
+}
+.pilou_con a{
+    display: inline-block;
+    width: 480px;
+    height: 240px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.pilou_con a img{
+    width: 100%;
+    height: 100%;
+}
+.pilou_list{
+    width: 100%;
+    padding: 30px;
+    background: #f3f3f3;
+}
+.list_con{
+    width: 1000px;
+    margin: 0 auto;
+}
+.list_con>p{
+    text-align: center;
+    width: 100%;
+    font-family: AgencyFB-Bold;
+    font-size: 30px;
+    color: #ababab;
+}
+.list_con ul{
+    background: #fff;
+    padding: 0 30px;
+    margin-top: 30px;
+}
+.list_con ul li{
+    height: 85px;
+    font-size: 18px;
+    color: #333333;
+    line-height: 85px;
+    border-bottom: 1px solid #eee; 
+}
+.list_con ul li p{
+    float: left;
+}
+.list_con ul li span{
+    float: right;
+}
+.list_on{
+    color: #dd2222;
+}
