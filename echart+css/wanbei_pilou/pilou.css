@@ -105,8 +105,15 @@ ul, ol {
 .list_con ul li p{
     float: left;
 }
+.list_con ul li p em{
+    color: #dd2222;
+    font-size: 20px;
+    font-weight: bolder;
+}
 .list_con ul li span{
     float: right;
+    color: #838383;
+    font-size: 14px;
 }
 .list_on{
     color: #dd2222;
