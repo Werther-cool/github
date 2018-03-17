@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // {
+      //   var arr = [0,0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,8,9,0,1,11];
+      //   function unArr(arr) {
+      //     if (arr.length<=1) {
+      //       return;
+      //     }
+      //     var newArr = [];
+      //     for (var i = 0; i < arr.length; i++) {
+      //       if (newArr.indexOf(arr[i])==-1) {
+      //         newArr.push(arr[i])
+      //       }
+      //
+      //     }
+      //
+      //     return newArr;
+      //   }
+      //   console.time("test");
+      //   var a = unArr(arr);
+      //   console.timeEnd("test");
+      //   console.log(a);
+      // }
+
+      {
+        var arr = [0,0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,8,9,0,1,11];
+        function unArr(arr) {
+        arr.sort();
+        var newArr = [arr[0]],firstArr = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i]!==firstArr) {
+            newArr.push(arr[i]);
+            firstArr = arr[i];
+          }
+        }
+          return newArr;
+        }
+        console.time("test");
+        var a = unArr(arr);
+        console.timeEnd("test");
+        console.log(a);
+      }
+      {
+        var Arr = [0,0,1,1,2,2,3,3,4,4,5,5,6,7,8,9];
+         function unArray (Arr) {
+          Arr.sort();//先排序
+          var newArr = [Arr[0]],firstArr = Arr[0];//创建一个新数组和一个变量firstArr,并赋值为数组Arr的第一个值
+            for (var i = 0; i < Arr.length; i++) {
+               if (Arr[i] !== firstArr){//如果数组的第i个不等于firstArr;
+                   newArr.push(Arr[i]);//把第Arr[i]项插入新数组newArr
+                   firstArr = Arr[i];//重新设置变量firstArr为rr[i]，也就是刚插入newArr的那一项
+              }
+            };
+            return newArr;//返回新数组newArr
+          }
+         unArray(Arr);
+
+
+      }
+    </script>
+  </body>
+</html>

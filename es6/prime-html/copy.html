@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<script>
+    var arr = [];
+
+    var p = ["f","g","a"];
+    var p2 = {"name":"g","age":"12","place":["a","b"]};
+
+    function extendCopy (p) {
+        var c = {};
+        for(var i in p){
+            c[i] = p[i];
+        }
+        return c;
+    }
+    // var c1 = extendCopy(p2);
+    // c1.place.push("c");
+    // console.log(c1);
+    // console.log(p2);
+
+    function deepCopy(p,c) {
+        var c = c || {};
+        for(var i in p){
+            if (typeof p[i] === 'object' ) {
+                c[i] = (p[i].constructor === Array)? [] :{};
+               deepCopy(p[i],c[i]);          
+            }else{
+                c[i] = p[i];
+            }
+        }
+        return c;
+    }
+  
+    var c1 = deepCopy(p2);
+    c1.place.push("c");
+    // console.log(c1);
+    // console.log(p2);
+
+    /* 判断一个数组是不是array */
+    var a = [],
+        type;
+    // var type = a instanceof Array;
+    // type = a.constructor == Array;
+    // type = Array.isArray(a);
+
+    // type = Object.getPrototypeOf(a) === Array.prototype; 
+    // console.log(type);
+
+    var str = "zksn?dfn&asdfn&knsd&asd";
+    var arr = str.split('&');
+    console.log(arr);
+
+    function getRequest(url) {
+        // var url = location.serach;
+       if (url.indexOf("?") != -1) {
+           var str = url.substr(1);
+           strs = str.split("&");
+            console.log(strs);
+       }
+
+    }
+    // getRequest(str);
+    var a ={"place":["1","2"]};
+    b = a;
+    b.place.push("3");
+    console.log(a);
+</script>    
+</body>
+</html>

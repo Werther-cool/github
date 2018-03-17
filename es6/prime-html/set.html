@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    const set = new Set([1, 2, 3, 4, 4]);
+    // let set = new Set([1, 2, 3, 4, 4]);
+    // [...set]
+    console.log("set",set);
+    console.log("...",[...set]);
+    console.log([set],set.size);
+    set.add("4");
+    console.log('has',set.has(1));
+    console.log('delete',set.delete(1));
+
+
+    const items = [
+      ['name', '张三'],
+      ['title', 'Author']
+    ];
+
+    const map = new Map();
+
+    items.forEach(
+      ([key, value]) => map.set(key, value)
+    );
+    console.log(map);
+
+    const map2 = new Map([
+  ['name', '张三'],
+  ['title', 'Author']
+]);
+console.log(map2);
+    </script>
+  </body>
+</html>

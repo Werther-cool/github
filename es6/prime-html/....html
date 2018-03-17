@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title></title>
+</head>
+<body>
+    <script>
+        function sum(...m) {
+            let total = 0;
+            for(var i of m){
+                 total += i
+            }
+            console.log(`total:${total}`);
+        }
+        sum(1,2,3)
+
+        console.log(...[4,6]);
+        let arr1 = [4,2],
+            arr2 = [3,1];
+
+            console.log([...arr1,...arr2]);
+    </script>
+</body>
+</html>
