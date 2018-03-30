@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="mymoney.css">
+
+  </head>
+  <body>
+    <div class="mymoney">
+      <h2>我的资金存管账户</h2>
+      <div class="moneyCon">
+          <!-- <div class="money_con1">
+            <p>您还未在我们富邦华一账户上绑卡</p>
+            <p>为了您的资金安全，请前往绑卡</p>
+            <a href="#" class="con1_btn">绑卡</a>
+          </div> -->
+          <!-- <div class="money_con2">
+              <h3>银行卡信息</h3>
+              <p>姓名：梁六六</p>
+              <p>卡号：360 1234 5678 9876</p>
+              <a href="#">重新绑卡</a>
+          </div> -->
+          <!-- <div class="money_con3">
+            <h3> 银行卡信息<i> > </i>重新绑卡 </h3>
+            <p>银行卡号</p>
+            <input type="number" placeholder="请输入银行卡号">
+            <p>银行预留手机号</p>
+            <input type="number" placeholder="请输入手机号码">
+            <p>银行编码</p>
+            <div class="last_input">
+              <span class="poa_before"> </span>
+              <ul class="poa_ul">
+                <li>中国银行</li>
+                <li>中国银行</li>
+                <li>中国银行</li>
+                <li>中国银行</li>
+                <li>中国银行</li>
+                <li>中国银行</li>
+              </ul>
+                <input  type="number" placeholder="请输入银行编码">
+            </div>
+            <a href="#" class="con1_btn">提交</a>
+          </div> -->
+          <!-- <div class="money_con4">
+            <div class="money_con4_con">
+              <p>用户角色选择</p>
+              <div class="radio_div">
+                <span class="money_radio"><img src="./images/money_check.png" alt=""> </span>
+                <p>投资人</p>
+              </div>
+              <div class="radio_div">
+                <span class="money_radio"><img src="./images/money_check.png" alt=""> </span>
+              <p>借款人</p>
+              </div>
+              <a href="#" class="con1_btn">提交</a>
+            </div>
+          </div> -->
+          <!-- <div class="money_con5">
+            <h4>您还未在我们富邦华一账户上绑卡，为了您的资金安全，请前往绑卡</h4>
+            <p>银行卡号</p>
+            <input type="number" placeholder="请输入银行卡号">
+            <p>银行编码</p>
+            <div class="last_input">
+                <input  type="number" placeholder="请输入银行编码">
+            </div>
+              <a href="#" class="con1_btn">绑卡</a>
+          </div> -->
+          <!-- 企业注册 重新绑卡 -->
+          <div class="money_con6">
+              <h3> 银行卡信息<i> > </i>重新绑卡 </h3>
+              <div class="money_con6_div">
+                <p>银行卡号</p>
+                <input type="number" placeholder="请输入银行卡号">
+                <p>银行预留手机号</p>
+                <input type="number" placeholder="请输入手机号码">
+                <p>银行编码</p>
+                <div class="last_input">
+                  <span class="poa_before"> </span>
+                  <ul class="poa_ul">
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                  </ul>
+                    <input  type="number" placeholder="请输入银行编码">
+                </div>
+              </div>
+              <div class="money_con6_div">
+                <p>开户行省份</p>
+                <div class="last_input">
+                  <span class="poa_before"> </span>
+                  <ul class="poa_ul">
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                  </ul>
+                      <input type="number" placeholder="请选择开户行省份">
+                </div>
+                <p>开户行城市</p>
+                <div class="last_input">
+                  <span class="poa_before"> </span>
+                  <ul class="poa_ul">
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                    <li>中国银行</li>
+                  </ul>
+                      <input type="number" placeholder="请选择开户行城市">
+                </div>
+                  <p>开户行机构名(支行)</p>
+                <input  type="number" placeholder="请输入开户行机构名(支行)">
+              </div>
+                <a href="#" class="con1_btn">提交</a>
+          </div>
+      </div>
+    </div>
+    <script src="./jquery.min.js"  charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function () {
+        // var tag = {echo 1};
+
+        $('.poa_before').click(function () {
+            $(this).siblings('.poa_ul').toggle();
+            $(this).toggleClass('poa_before_on');
+        })
+        // 下拉框
+        $(".poa_ul").delegate("li","click",function () {
+            console.log($(this).index());
+      　return false;
+        })
+        $(".con1_btn").click(function () {
+          console.log("con1_btn");
+        })
+
+      })
+    </script>
+  </body>
+</html>

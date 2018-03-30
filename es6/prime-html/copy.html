@@ -71,6 +71,23 @@
     b = a;
     b.place.push("3");
     console.log(a);
+
+    function deep(p,c) {
+        var c = c || {};
+        for ( var i in p){
+            if (p[i].typeof === 'object') {
+               c[i] = p[i].constructor === Array?[]:{}
+               deep(c[i]);
+            }else{
+                c[i] = p[i];
+            }
+        }
+        return c;
+    }
+
+        var c2 = deep(p2);
+        console.log('c2',c2);
+
 </script>    
 </body>
 </html>
