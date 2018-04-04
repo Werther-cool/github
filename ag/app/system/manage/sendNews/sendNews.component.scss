@@ -1,0 +1,65 @@
+.sendNews{
+  background-color: #ffffff;
+  font-family:"微软雅黑";
+  font-size: 18px;
+  height: 800px;
+  padding: 30px 30px;
+}
+h3 {
+  font-size: 16px;
+  color: #FF814F;
+}
+.title {
+  width: 684px;
+  height: 40px;
+  margin-bottom: 20px;
+  //color: #C6C6C6;
+  font-size: 18px;
+  padding: 0 10px;
+  margin-right: 20px;
+  border: 1px solid #DEDEDE;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+  color: lightgrey;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: lightgrey;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: lightgrey;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: lightgrey;
+}
+.dingshi {
+  color: #555555;
+  position: relative;
+  .yuan {
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+  }
+}
+.caogao {
+  color: #555555;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  float: right;
+  width: 112px;
+  height: 38px;
+  position: absolute;
+  right: 0;
+  top: -7px;
+}
+.fabuBtn {
+  width: 200px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 24px;
+  background-color: #FF814F;
+  border-radius: 10px;
+  border: none;
+  margin-left: 37%;
+  margin-top: 56px;
+}

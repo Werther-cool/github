@@ -1,146 +1,322 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="mymoney.css">
 
-  </head>
-  <body>
-    <div class="mymoney">
-      <h2>我的资金存管账户</h2>
-      <div class="moneyCon">
-          <!-- <div class="money_con1">
-            <p>您还未在我们富邦华一账户上绑卡</p>
-            <p>为了您的资金安全，请前往绑卡</p>
-            <a href="#" class="con1_btn">绑卡</a>
-          </div> -->
-          <!-- <div class="money_con2">
-              <h3>银行卡信息</h3>
-              <p>姓名：梁六六</p>
-              <p>卡号：360 1234 5678 9876</p>
-              <a href="#">重新绑卡</a>
-          </div> -->
-          <!-- <div class="money_con3">
-            <h3> 银行卡信息<i> > </i>重新绑卡 </h3>
-            <p>银行卡号</p>
-            <input type="number" placeholder="请输入银行卡号">
-            <p>银行预留手机号</p>
-            <input type="number" placeholder="请输入手机号码">
-            <p>银行编码</p>
-            <div class="last_input">
-              <span class="poa_before"> </span>
-              <ul class="poa_ul">
-                <li>中国银行</li>
-                <li>中国银行</li>
-                <li>中国银行</li>
-                <li>中国银行</li>
-                <li>中国银行</li>
-                <li>中国银行</li>
-              </ul>
-                <input  type="number" placeholder="请输入银行编码">
-            </div>
-            <a href="#" class="con1_btn">提交</a>
-          </div> -->
-          <!-- <div class="money_con4">
-            <div class="money_con4_con">
-              <p>用户角色选择</p>
-              <div class="radio_div">
-                <span class="money_radio"><img src="./images/money_check.png" alt=""> </span>
-                <p>投资人</p>
-              </div>
-              <div class="radio_div">
-                <span class="money_radio"><img src="./images/money_check.png" alt=""> </span>
-              <p>借款人</p>
-              </div>
-              <a href="#" class="con1_btn">提交</a>
-            </div>
-          </div> -->
-          <!-- <div class="money_con5">
-            <h4>您还未在我们富邦华一账户上绑卡，为了您的资金安全，请前往绑卡</h4>
-            <p>银行卡号</p>
-            <input type="number" placeholder="请输入银行卡号">
-            <p>银行编码</p>
-            <div class="last_input">
-                <input  type="number" placeholder="请输入银行编码">
-            </div>
-              <a href="#" class="con1_btn">绑卡</a>
-          </div> -->
-          <!-- 企业注册 重新绑卡 -->
-          <div class="money_con6">
-              <h3> 银行卡信息<i> > </i>重新绑卡 </h3>
-              <div class="money_con6_div">
-                <p>银行卡号</p>
-                <input type="number" placeholder="请输入银行卡号">
-                <p>银行预留手机号</p>
-                <input type="number" placeholder="请输入手机号码">
-                <p>银行编码</p>
-                <div class="last_input">
-                  <span class="poa_before"> </span>
-                  <ul class="poa_ul">
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                  </ul>
-                    <input  type="number" placeholder="请输入银行编码">
-                </div>
-              </div>
-              <div class="money_con6_div">
-                <p>开户行省份</p>
-                <div class="last_input">
-                  <span class="poa_before"> </span>
-                  <ul class="poa_ul">
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                  </ul>
-                      <input type="number" placeholder="请选择开户行省份">
-                </div>
-                <p>开户行城市</p>
-                <div class="last_input">
-                  <span class="poa_before"> </span>
-                  <ul class="poa_ul">
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                    <li>中国银行</li>
-                  </ul>
-                      <input type="number" placeholder="请选择开户行城市">
-                </div>
-                  <p>开户行机构名(支行)</p>
-                <input  type="number" placeholder="请输入开户行机构名(支行)">
-              </div>
-                <a href="#" class="con1_btn">提交</a>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="mymoney.css">
+
+</head>
+
+<body>
+  <div class="mymoney">
+    <h2>我的资金存管账户</h2>
+    <div class="moneyCon">
+      <!-- 未绑卡 -->
+      <div class="money_con1" id="con1">
+        <p>您还未在我们富邦华一账户上绑卡</p>
+        <p>为了您的资金安全，请前往绑卡</p>
+        <a href="#" class="con_btn btn01" >绑卡</a>
       </div>
-    </div>
-    <script src="./jquery.min.js"  charset="utf-8"></script>
-    <script type="text/javascript">
-      $(function () {
-        // var tag = {echo 1};
+      <!-- 已经绑卡 -->
+      <div class="money_con2" id="con2">
+        <h3>银行卡信息</h3>
+        <p>姓名：梁六六</p>
+        <p>卡号：360 1234 5678 9876</p>
+        <a href="#" class="btn02">重新绑卡</a>
+      </div>
+      <!-- 重新绑卡 -->
+      <div class="money_con3" id="con3">
+        <h3> 银行卡信息
+          <i> > </i>重新绑卡 </h3>
+        <p>银行卡号</p>
+        <input type="number" placeholder="请输入银行卡号">
+        <p>银行预留手机号</p>
+        <input type="number" placeholder="请输入手机号码">
+        <p>银行编码</p>
+        <div class="last_input">
+          <span class="poa_before"> </span>
+          <ul class="poa_ul">
+            <li>中国银行</li>
+            <li>中国银行</li>
+            <li>中国银行</li>
+            <li>中国银行</li>
+            <li>中国银行</li>
+            <li>中国银行</li>
+          </ul>
+          <input type="text" disabled="disabled" placeholder="请输入银行编码">
+        </div>
+        <a href="#" class="con_btn btn03">提交</a>
+      </div>
+      <!-- 个人注册 选择 -->
+      <div class="money_con4" id="con4">
+        <div class="money_con4_con">
+          <p>用户角色选择</p>
+          <div class="radio_div">
+            <span class="money_radio">
+              <img  src="./images/money_check.png" alt=""> </span>
+            <p>投资人</p>
+          </div>
+          <div class="radio_div">
+            <span class="money_radio">
+              <img  class="money_radio_img2" src="./images/money_check.png" alt=""> </span>
+            <p>借款人</p>
+          </div>
+          <a href="#" class="con_btn btn04">提交</a>
+        </div>
+      </div>
+      <!-- 企业注册 -->
+      <div class="money_con5" id="con5">
+        <h4>您还未在我们富邦华一账户上绑卡，为了您的资金安全，请前往绑卡</h4>
+        <p>银行卡号</p>
+        <input type="number" placeholder="请输入银行卡号">
+        <p>银行编码</p>
+        <div class="last_input">
+            <span class="poa_before"> </span>
+            <ul class="poa_ul">
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+            </ul>
+          <input type="text" disabled="disabled" placeholder="请输入银行编码">
+        </div>
+        <a href="#" class="con_btn btn05">绑卡</a>
+      </div>
+      <!-- 企业注册 重新绑卡 -->
+      <div class="money_con6" id="con6">
+        <h3> 银行卡信息
+          <i> > </i>重新绑卡 </h3>
+        <div class="money_con6_div">
+          <p>银行卡号</p>
+          <input type="number" placeholder="请输入银行卡号">
+          <p>银行预留手机号</p>
+          <input type="number" placeholder="请输入手机号码">
+          <p>银行编码</p>
+          <div class="last_input">
+            <span class="poa_before"> </span>
+            <ul class="poa_ul">
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+            </ul>
+            <input type="text" disabled="disabled" placeholder="请输入银行编码">
+          </div>
+        </div>
+        <div class="money_con6_div">
+          <div class="info">
+            <div>
+              <p>开户行省份</p>
+              <div class="last_input">
+                <select id="s_province" name="s_province"></select>
+              </div>
+              <p>开户行城市</p>
+              <div class="last_input">
+                <select id="s_city" name="s_city"></select>
+              </div>
+              <select id="s_county" name="s_county"></select>
+            </div>
+            <div id="show"></div>
+          </div>
+          <p>开户行机构名(支行)</p>
+          <input type="text" placeholder="请输入开户行机构名(支行)">
+        </div>
+        <a href="#" class="con_btn btn06">提交</a>
+      </div>
+      <!-- 企业注册及绑卡 -->
+      <div class="money_con6" id="con7">
+        <h3> 银行卡信息</h3>
+        <div class="money_con6_div">
+          <p>开户银行许可证号</p>
+          <input type="number" placeholder="请输入开户银行许可证号">
+          <p>企业对公账户</p>
+          <input type="number" placeholder="请输入企业对公账户">
+          <p>银行编码</p>
+          <div class="last_input">
+            <span class="poa_before"> </span>
+            <ul class="poa_ul">
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+              <li>中国银行</li>
+            </ul>
+            <input type="text" disabled="disabled" placeholder="请输入银行编码">
+          </div>
+        </div>
+        <div class="money_con6_div">
+          <p>法人证件类型</p>
+          <input type="text" placeholder="请输入法人证件类型">
+          <p>企业联系人</p>
+          <input class="half_input" type="text" placeholder="姓名">
+          <input class="half_input" type="number" placeholder="联系手机号码">
+          <p>开户行机构名(支行)</p>
+          <input type="text" placeholder="请输入开户行机构名(支行)">
+        </div>
+        <a href="#" class="con_btn btn07">提交</a>
+      </div>
+      <!-- 企业 已经绑卡 -->
+      <div class="money_con2" id="con2">
+          <h3>银行卡信息</h3>
+          <p>姓名：梁六六</p>
+          <p>卡号：360 1234 5678 9876</p>
+          <a href="#" class="btn08">重新绑卡</a>
+        </div>
 
-        $('.poa_before').click(function () {
-            $(this).siblings('.poa_ul').toggle();
-            $(this).toggleClass('poa_before_on');
+    </div>
+  </div>
+  <script src="./jquery.min.js" charset="utf-8"></script>
+  <script class="resources library" src="area.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+      /*  
+      1 个人未绑卡 ->4
+      2 个人 个人 企业  已注册 ->3
+      3 个人重新绑卡 ->提交
+      4 个人选择 ->3
+      5 企业未注册 ->7
+      6 企业重新注册 ->提交
+      7 企业注册及绑卡 ->提交
+      8 企业  已注册 ->6
+      */
+      // var initTag = {php 1};
+      var initTag = 7;
+      var id = '#con' + initTag;
+      $(id).show();
+
+      // 页面跳转
+      $(".btn01").click(function () {
+        var tag = 4;
+        var id = '#con' + tag;
+        $(id).show();
+        $(id).siblings().hide();
+      })
+      $(".btn02").click(function () {
+        var tag = 3;
+        var id = '#con' + tag;
+        $(id).show();
+        $(id).siblings().hide();
+      })
+      $(".btn03").click(function () {
+      // 个人提交
+      var card = $("#con3").find('input').eq(0).val();
+      var phone = $("#con3").find('input').eq(1).val();
+      var bank = $("#con3").find('input').eq(2).val();
+      console.log(card,phone,bank);
+        $.ajax({
+          url:"./",
+          type:"POST",
+          data:"card="+card+"&phone="+phone+"&bank="+bank,
+          success:function (res) {
+            console.log(res);
+          }
         })
-        // 下拉框
-        $(".poa_ul").delegate("li","click",function () {
-            console.log($(this).index());
-      　return false;
-        })
-        $(".con1_btn").click(function () {
-          console.log("con1_btn");
+      })
+      $(".btn04").click(function () {
+        var tag = 3;
+        var id = '#con' + tag;
+        $(id).show();
+        $(id).siblings().hide();
+      });
+      $(".btn05").click(function () {
+        var tag = 7;
+        var id = '#con' + tag;
+        $(id).show();
+        $(id).siblings().hide();
+      })
+      $(".btn06").click(function () {
+        // 企业重新注册 ->提交
+      var card = $("#con6").find('input').eq(0).val();
+      var phone = $("#con6").find('input').eq(1).val();
+      var bank = $("#con6").find('input').eq(2).val();
+      var bankName = $("#con6").find('input').eq(3).val();
+      var provinces = $("#con6").find('select').eq(0).val();
+      var city = $("#con6").find('select').eq(1).val();
+      console.log(card,phone,bank,bankName,provinces,city);
+
+         $.ajax({
+          url:"./",
+          type:"POST",
+          data:"card="+card+"&phone="+phone+"&bank="+bank+"&bankName="+bankName+"&provinces="+provinces+"&city="+city,
+          success:function (res) {
+            console.log(res);
+          }
         })
 
       })
-    </script>
-  </body>
+      $(".btn07").click(function () {
+        // 企业注册及绑卡 ->提交
+        var card = $("#con7").find('input').eq(0).val();
+      var account = $("#con7").find('input').eq(1).val();
+      var bank = $("#con7").find('input').eq(2).val();
+      var legalType = $("#con7").find('input').eq(3).val();
+      var name = $("#con7").find('input').eq(4).val();
+      var phone = $("#con7").find('input').eq(5).val();
+      var bankName = $("#con7").find('input').eq(5).val();
+      
+      console.log(card,account,bank,bankName,name,legalType,phone);
+
+       $.ajax({
+          url:"./",
+          type:"POST",
+          data:"card="+card+"&phone="+phone+"&bank="+bank+"&bankName="+bankName+"&account="+account+"&legalType="+legalType+"&name="+name,
+          success:function (res) {
+            console.log(res);
+          }
+        })
+      })
+      $(".btn08").click(function () {
+        var tag = 6;
+        var id = '#con' + tag;
+        $(id).show();
+        $(id).siblings().hide();
+      })
+      $('.poa_before').click(function () {
+        $(this).siblings('.poa_ul').toggle();
+        $(this).toggleClass('poa_before_on');
+      })
+      // 下拉框
+      $(".poa_ul").delegate("li", "click", function () {
+        var value = $(this).text();
+        console.log($(this).index(),value);　
+        $(this).parent('.poa_ul').siblings('input').val(value);
+        $(this).parent('.poa_ul').hide();
+        return false;
+      })
+      
+      /* 打钩 */
+      $('.radio_div').click(function () {
+      
+        var memberType=$(this).index();
+        $(this).find('img').show();
+        $(this).siblings().find('img').hide();
+        console.log(memberType);
+      })
+
+
+      // 三级联动
+      _init_area();
+      var Gid = document.getElementById;
+
+      var showArea = function () {
+
+        Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
+
+          Gid('s_city').value + " - 县/区" +
+
+          Gid('s_county').value + "</h3>"
+
+      }
+      Gid('s_county').setAttribute('onchange', 'showArea()');
+
+    })
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,48 @@
+$topnav-background-color: #F8F8F8;
+.admin-backgroup {
+    position: absolute;
+    font-family:"微软雅黑";
+    background-color: $topnav-background-color;
+    border: 2px;
+    height: 100%;
+}
+.header-backgroup {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1100;
+  font-family:'微软雅黑';
+  height: 80px;
+  width: 100%;
+  //border-top:0.5px solid red;
+}
+.content{
+  width: 100%;
+  //margin: 800px 0 50px 0;
+}
+.slider{
+  width: 100%;
+}
+.bottom-backgroup {
+  background-color: #ffffff;
+  font-family:"微软雅黑";
+  position:absolute;
+  left:0;
+  width: 100%;
+}
+.hiddened{
+  background-color: #444444;
+  //visibility: hidden;
+}
+.showed{
+  visibility: visible;
+}
+@media screen and (max-width: 984px) {
+  .bottom-backgroup {
+    background-color: #ffffff;
+    font-family:"微软雅黑";
+    position:absolute;
+    left:0;
+    width: 984px;
+  }
+}

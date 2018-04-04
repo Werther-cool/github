@@ -1,8 +1,15 @@
-a, img, button, input, textarea, div {
+a,
+img,
+button,
+input,
+textarea,
+div {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   padding: 0;
   margin: 0;
   /*清除ios默认的点击时产生的高亮区块   rgba(0,0,0,0)*/
@@ -12,7 +19,8 @@ a, img, button, input, textarea, div {
   -webkit-box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   /*overflow-x: hidden;*/
   overflow: hidden;
@@ -38,7 +46,9 @@ a {
   color: #333;
 }
 
-input, textarea {
+input,
+textarea,
+select {
   border: 0;
   outline: none;
   resize: none;
@@ -46,7 +56,8 @@ input, textarea {
   -webkit-appearance: none;
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -60,7 +71,8 @@ img {
   border: 0;
 }
 
-.clearfix::after, .clearfix::before {
+.clearfix::after,
+.clearfix::before {
   clear: both;
   content: '.';
   height: 0;
@@ -69,14 +81,18 @@ img {
   display: block;
 }
 
-fieldset, img, input, button {
+fieldset,
+img,
+input,
+button {
   border: none;
   padding: 0;
   margin: 0;
   outline-style: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -85,11 +101,14 @@ input {
   padding-bottom: 0;
 }
 
-select, input {
+select,
+input {
   vertical-align: middle;
 }
 
-select, input, textarea {
+select,
+input,
+textarea {
   font-size: 12px;
   margin: 0;
 }
@@ -97,7 +116,6 @@ select, input, textarea {
 textarea {
   resize: none;
 }
-
 
 /*防止拖动*/
 
@@ -113,13 +131,20 @@ a {
 
 a:hover {}
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-decoration: none;
   font-weight: normal;
   font-size: 100%;
 }
 
-s, i, em {
+s,
+i,
+em {
   font-style: normal;
   text-decoration: none;
 }
@@ -158,9 +183,10 @@ s, i, em {
   line-height: 28px;
   color: #666;
   font-size: 16px;
+  margin: 20px;
 }
 
-.con1_btn {
+.con_btn {
   width: 139px;
   height: 30px;
   background-color: #dd2222;
@@ -171,7 +197,7 @@ s, i, em {
   line-height: 30px;
 }
 
-.money_con1 .con1_btn {
+.money_con1 .con_btn {
   margin-top: 30px;
 }
 
@@ -184,7 +210,7 @@ s, i, em {
   width: 100%;
   font-family: MicrosoftYaHei;
   font-size: 18px;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   font-weight: normal;
   font-stretch: normal;
   letter-spacing: 0px;
@@ -251,6 +277,8 @@ input {
   border-radius: 5px;
   padding-left: 10px;
   margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
 }
 
 .money_con3 h3>i {
@@ -307,7 +335,7 @@ input:placeholder {
   color: #cccccc;
 }
 
-.money_con3 .con1_btn {
+.money_con3 .con_btn {
   margin-top: 0;
 }
 
@@ -334,6 +362,9 @@ input:placeholder {
 }
 
 .money_radio {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 24px;
   height: 28px;
   display: inline-block;
@@ -344,17 +375,23 @@ input:placeholder {
 .money_radio>img {
   position: relative;
   left: 4px;
-  /* display: none; */
-}
 
+}
+.money_radio_img2{
+  display: none;
+}
 .radio_div {
   margin-left: 20px;
+  height: 30px;
+  position: relative;
+  margin-top: 5px;
 }
 
 .radio_div p {
-  position: relative;
-  top: 5px;
-  left: 4px;
+
+  position: absolute;
+  top: 3px;
+  left: 32px;
   width: 154px;
   height: 26px;
   line-height: 26px;
@@ -367,7 +404,7 @@ input:placeholder {
   color: #666666;
 }
 
-.money_con4 .con1_btn {
+.money_con4 .con_btn {
   margin-top: 15px;
   margin-left: 20px;
 }
@@ -398,10 +435,12 @@ input:placeholder {
 }
 
 .money_con6 {
-  padding: 0 10px;
+  padding: 0 10px 50px 10px;
+  
 }
 
 .money_con6 h3 {
+  text-align: left;
   box-sizing: border-box;
   width: 100%;
   font-family: MicrosoftYaHei;
@@ -468,4 +507,59 @@ input:placeholder {
 
 .money_con6 .money_con6_div {
   margin-right: 2%;
+}
+
+.money_con6 p {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.money_con6 {
+  text-align: center;
+}
+
+.money_con6 .con_btn {
+  margin-top: 30px;
+}
+
+/* 三级联动 */
+
+select {
+  width: 354px;
+  height: 35px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+#s_county {
+  display: none;
+}
+
+.money_con6 .half_input {
+  width: 177px;
+  float: left;
+}
+
+#con1,
+#con2,
+#con3,
+#con4,
+#con5,
+#con6,
+#con7 {
+  display: none;
+}
+.money_con5{
+  padding-bottom:100px; 
 }

@@ -1,0 +1,21 @@
+<div [@routerTransition]>
+  <div class="sendNews">
+    <h3>内容发布</h3>
+    <input type="text" class="title"  [(ngModel)]="newForm.newsTitle" placeholder="标题(5-30字符)">
+
+    <!--富文本编辑框-->
+<!--    <div class="edit">
+      <ckeditor [(ngModel)]="newForm.newsContent" debounce="500"  >
+      </ckeditor>
+    </div>
+    <br>-->
+    <div  class="edit">
+      <ueditor [(ngModel)]="newForm.newsContent"></ueditor>
+    </div><br>
+    <div class="dingshi">
+      <input type="radio" class="yuan">定时发布
+      <button class="caogao" (click)="saveNew(1)" >存草稿</button>
+    </div>
+    <button class="fabuBtn" (click)="saveNew(2)" >发布</button>
+  </div>
+</div>

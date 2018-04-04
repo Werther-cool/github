@@ -1,0 +1,19 @@
+tr {
+  white-space: nowrap;
+  text-align: center;
+}
+.tables{
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+}
+.left-table{
+  width: 13%;
+  margin-left: 10px;
+}
+.containers{
+  position: absolute;
+  bottom: -100px;
+}

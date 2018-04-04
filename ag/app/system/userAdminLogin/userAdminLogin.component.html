@@ -1,0 +1,26 @@
+<div [@routerTransition]>
+  <!--<button class="btn rounded-btn"  (click)="onLoggedin()"> 登录 </button>-->
+  <!--<a class="btn rounded-btn" [routerLink]="['/main']">注册</a>-->
+
+  <div class="container">
+    <img class="bg" src="../../../assets/userAdmin/bs-bg.jpg" alt="">
+    <div class="login">
+      <div class="content">
+        <p class="xieyi">{{message}}</p>
+        <form id="logink" name="logink" action="" method="post">
+          <input class="phoNum kuan full" [(ngModel)]= "userAdminForm.userMobile" name="userMobile" type="text" placeholder="用户名/手机号码">
+
+          <br>
+          <input class="code kuan full" type="text" [(ngModel)]= "userAdminForm.checkNum" name="checkNum"  placeholder="密码">
+
+          <input class="loginBtn kuan" type="submit" (click)="onLoggedin()" value="登录">
+        </form><!--
+        <a href="javascript:;" class="weChat">
+          <i><img src="../../../assets/userAdmin/wechat.png" alt=""></i>
+          <span>微信</span>
+        </a>-->
+      </div>
+    </div>
+  </div>
+</div>
+

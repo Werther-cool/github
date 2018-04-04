@@ -1,0 +1,158 @@
+<div [@routerTransition]>
+  <div class="header-input">
+    <input [disabled]="disable" type="text" class="form-control input-width" id="exampleInputName1" placeholder="商品ID" style="width: 100px" [(ngModel)]="itemId">
+    <input [disabled]="disable" type="text" class="form-control input-width" id="exampleInputName2" placeholder="售货机编号" style="width: 150px" [(ngModel)]="vendingMachinesCode">
+    <select class="form-control input-width" style="width: 150px; height: 34px">
+      <option value="">支付类型</option>
+      <option *ngFor="let item of payTypeList" value="">{{item}}</option>
+    </select>
+    <input [disabled]="disable" type="text" class="form-control input-width" id="exampleInputName3" placeholder="交易平台订单号 " style="width: 150px" [(ngModel)]="payCode">
+    <input [disabled]="disable" type="text" class="form-control input-width" id="exampleInputName4" placeholder="描述（如：测试）" style="width: 150px" [(ngModel)]="miaoshu">
+    <input [disabled]="disable" type="text" class="form-control input-width" id="exampleInputName5" placeholder="内部订单号  " style="width: 150px" [(ngModel)]="ptCode">
+    <input
+      [disabled]="disable"
+      class="form-control"
+      placeholder="选择日期"
+      bsDatepicker
+      name="startDateInput"
+      [(ngModel)]="startDateInput"
+      [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-dark-blue' }"
+      style="width: 150px">
+    <input
+      [disabled]="disable"
+      class="form-control"
+      placeholder="选择日期"
+      bsDatepicker
+      name="endDateInput"
+      [(ngModel)]="endDateInput"
+      [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', containerClass: 'theme-dark-blue' }"
+      style="width: 150px">
+  </div>
+  <div class="header-input-second">
+    <!--<select class="form-control" style="width: 150px; height: 34px">-->
+      <!--<option value="">选择时间段</option>-->
+      <!--<option value="">今天</option>-->
+      <!--<option value="">昨天</option>-->
+      <!--<option value="">本周</option>-->
+      <!--<option value="">上周</option>-->
+      <!--<option value="">本月</option>-->
+    <!--</select>-->
+    <button [disabled]="disable" (click)="check()" type="button" class="btn btn-primary check">查询</button>
+    <button [disabled]="disable" (click)="reset()" type="button" class="btn btn-default reset">重置</button>
+  </div>
+  <div class="header-input-second">
+    <button [disabled]="disable" type="button" class="btn btn-primary check">导出当前页</button>
+    <button [disabled]="disable" type="button" class="btn btn-primary check">导出全部</button>
+    <button [disabled]="disable" (click)="delete()" type="button" class="btn btn-default reset">一键删除</button>
+    <button [disabled]="disable" style="margin-left: 50px" type="button" class="btn btn-primary check">进货总价: {{sumPrice}} 元</button>
+    <button [disabled]="disable" type="button" class="btn btn-primary check">销售总价: {{sumCostPrice}} 元</button>
+  </div>
+  <div>
+    <div class="bgloading">
+      <div [hidden]="!loadingbg" style="background-color: gainsboro;position: absolute;width: 1562px;height: 918px;top: -442px; opacity: 0.8"></div>
+      <div class="spinner" [hidden]="!loading" >
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+        Loading....
+      </div>
+    </div>
+  <div class="tables">
+    <table class="table table-bordered" style="overflow-x: scroll">
+    <thead>
+    <tr>
+      <th> </th>
+      <th>ID</th>
+      <th>客户ID</th>
+      <th>机构ID</th>
+      <th>机构名称</th>
+      <th>内部订单号</th>
+      <th>售货机编号</th>
+      <th>支付类型</th>
+      <th>商品类别</th>
+      <th>商品ID</th>
+      <th>货道</th>
+      <th>商品名称</th>
+      <th>商品进价（元）</th>
+      <th>商品总价（元）</th>
+      <th>商品数量</th>
+      <th>实际出货数量</th>
+      <th>状态</th>
+      <th>订单创建时间</th>
+      <th>订单支付时间</th>
+      <th>订单退款时间</th>
+      <th>订单完成时间</th>
+      <th>五分钟自动退款</th>
+      <th>客户手机号</th>
+      <th>交易平台订单号</th>
+      <th>商品单价（元）</th>
+      <th>描述</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr [hidden]="!payDtoList" *ngFor="let item of payDtoList; let i = index">
+      <th scope="row">
+        <div class="checkbox">
+          <label>
+            <input (click)="checkboxClick(item)" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." >
+          </label>
+        </div>
+      </th>
+      <td>{{item.id}}</td>
+      <td>{{item.customerId}}</td>
+      <td>{{item.companyId}}</td>
+      <td>{{item.companyName}}</td>
+      <td>{{item.ptCode}}</td>
+      <td>{{item.vendingMachinesCode}}</td>
+      <td>{{item.payType}}</td>
+      <td>{{item.itemType}}</td>
+      <td>{{item.itemId}}</td>
+      <td>{{item.wayNumber}}</td>
+      <td>{{item.itemName}}</td>
+      <td>{{item.costPrice}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.num}}</td>
+      <td>{{item.pickupNum}}</td>
+      <td>{{item.state}}</td>
+      <td>{{item.createTime}}</td>
+      <td>{{item.payTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+      <td>{{item.refundTime}}</td>
+      <td>{{item.finishTime}}</td>
+      <td>五分钟自动退款</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.payCode}}</td>
+      <td>{{item.price}}</td>
+      <td>-</td>
+      <td style="display: flex">
+        <button [disabled]="disable" type="button" class="btn btn-danger">退款</button>
+        <button [disabled]="disable" (click)="openModal(template, i)" style="margin-left: 5px" type="button" class="btn btn-primary">编辑</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="containers">
+    <pagination [disabled]="disable" [previousText]="previousText" [nextText]="nextText" [totalItems]="totalNum" [rotate]="rotate" [maxSize]="5" [itemsPerPage]="pageSize" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+    <div class="input-number">
+      <input type="number" min="1" [(ngModel)]="text">
+      <button [disabled]="disable" type="button" class="btn btn-primary" (click)="turnToPage(text)">跳转</button>
+      一共{{totalPage}}页
+    </div>
+  </div>
+  </div>
+  <!--dialog-->
+  <ng-template #template>
+    <div class="modal-body text-center"  style="height: 160px">
+      <p>修改订单状态</p>
+      <select (click)="select()" id="select" class="form-control input-width" style="width: 100%;margin-bottom: 10px;margin-top: 30px;">
+        <option value="">状态</option>
+        <option *ngFor="let item of payRecordStateList" value="{{item.id}}">{{item.name}}</option>
+      </select>
+      <button type="button" class="btn btn-default" (click)="confirm()" >保存</button>
+      <button type="button" class="btn btn-primary" (click)="decline()" >取消</button>
+    </div>
+  </ng-template>
+</div>
