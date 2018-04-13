@@ -1,0 +1,565 @@
+a,
+img,
+button,
+input,
+textarea,
+div {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  /*清除ios默认的点击时产生的高亮区块   rgba(0,0,0,0)*/
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  /*定义盒子模型定义的宽度从边框计算*/
+  -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  /*overflow-x: hidden;*/
+  overflow: hidden;
+  overflow-y: auto;
+  /*height: 100%;*/
+}
+
+body {
+  font-family: "Microsoft YaHei", "sans-serif";
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  position: relative;
+  background: #f5f5f5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+input,
+textarea,
+select {
+  border: 0;
+  outline: none;
+  resize: none;
+  /*清楚ios浏览器默认的样式*/
+  -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+img {
+  vertical-align: middle;
+  /*清除3px的bug*/
+  border: 0;
+}
+
+.clearfix::after,
+.clearfix::before {
+  clear: both;
+  content: '.';
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  display: block;
+}
+
+fieldset,
+img,
+input,
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+select,
+input {
+  vertical-align: middle;
+}
+
+select,
+input,
+textarea {
+  font-size: 12px;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+/*防止拖动*/
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+s,
+i,
+em {
+  font-style: normal;
+  text-decoration: none;
+}
+
+.col-red {
+  color: #C81623 !important;
+}
+
+.mymoney {
+  width: 768px;
+  position: relative;
+  border: 1px solid #eee;
+  padding-bottom: 50px;
+}
+
+.mymoney h2 {
+  font: "Microsoft YaHei";
+  font-weight: 400;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border-top: 5px solid #d46b68;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.moneyCon {
+  width: 100%;
+}
+
+.money_con1 {
+  width: 398px;
+  height: 178px;
+  padding: 20px;
+  background: #f0f0f0;
+  text-align: center;
+  padding: 22px;
+  line-height: 28px;
+  color: #666;
+  font-size: 16px;
+  margin: 20px;
+}
+
+.con_btn {
+  width: 139px;
+  height: 30px;
+  background-color: #dd2222;
+  border-radius: 15px;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+.money_con1 .con_btn {
+  margin-top: 30px;
+}
+
+.money_con2 {
+  padding: 0 10px;
+}
+
+.money_con2 h3 {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  padding: 20px 10px 10px 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #666666;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.money_con2>p {
+  width: 398px;
+  height: 35px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 20px;
+  line-height: 35px;
+  padding-left: 20px;
+  color: #666;
+}
+
+.money_con2>a {
+  margin-left: 15px;
+  font-size: 14px;
+  display: inline-block;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 72px;
+  letter-spacing: 0px;
+  color: #2facfb;
+}
+
+.money_con3 {
+  padding: 0 10px;
+}
+
+.money_con3 h3 {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #666666;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 20px;
+}
+
+.money_con3>p {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 364px;
+  height: 35px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.money_con3 h3>i {
+  position: relative;
+  top: -2px;
+}
+
+.last_input input {
+  padding-left: 30px;
+}
+
+.last_input {
+  position: relative;
+}
+
+.last_input:before {
+  content: '';
+  width: 25px;
+  height: 20px;
+  background: url(./images/money_up.png) no-repeat center center;
+  background-size: 9px 5px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 7.5px;
+  border-right: 1px solid #ddd;
+  z-index: 99;
+  border-radius: 5px 0 0 5px;
+}
+
+.poa_before {
+  width: 24px;
+  height: 40px;
+  z-index: 999;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background: #f0f0f0 url(./images/money_down.png) no-repeat center center;
+  background-size: 9px 5px;
+}
+
+.poa_before_on {
+  opacity: 1;
+}
+
+input:placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 35px;
+  letter-spacing: 0px;
+  color: #cccccc;
+}
+
+.money_con3 .con_btn {
+  margin-top: 0;
+}
+
+.money_con4 {
+  padding: 20px;
+}
+
+.money_con4_con {
+  overflow: hidden;
+  width: 398px;
+  height: 178px;
+  background-color: #f0f0f0;
+}
+
+.money_con4_con>p {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  margin-top: 15px;
+  letter-spacing: 0px;
+  color: #666666;
+}
+
+.money_radio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 28px;
+  display: inline-block;
+  background: url(./images/money_circle.png) no-repeat center;
+  background-size: 24px 24px;
+}
+
+.money_radio>img {
+  position: relative;
+  left: 4px;
+
+}
+.money_radio_img2{
+  display: none;
+}
+.radio_div {
+  margin-left: 20px;
+  height: 30px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.radio_div p {
+
+  position: absolute;
+  top: 3px;
+  left: 32px;
+  width: 154px;
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  font-family: MicrosoftYaHei;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #666666;
+}
+
+.money_con4 .con_btn {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.money_con5 {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.money_con5 h4 {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+.money_con5>p {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.money_con6 {
+  padding: 0 10px 50px 10px;
+  
+}
+
+.money_con6 h3 {
+  text-align: left;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  padding: 20px 10px 10px 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #666666;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 20px;
+}
+
+.poa_ul {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: url(./images/money_ul.png) no-repeat left top;
+  background-size: 112px 172px;
+  width: 112px;
+  height: 172px;
+  box-sizing: border-box;
+  padding: 15px 10px 10px 10px;
+  display: none;
+  z-index: 1000;
+}
+
+.poa_ul li {
+  text-align: center;
+  height: 25px;
+  font-family: MicrosoftYaHei;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 25px;
+  letter-spacing: 0px;
+  color: #666666;
+  /* 取消文字选中 */
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.poa_ul li:hover {
+  color: #2facfb;
+}
+
+.money_con3 {
+  padding-bottom: 150px;
+}
+
+.money_con6_div {
+  width: 48%;
+  float: left;
+}
+
+.money_con6_div input {
+  width: 354px;
+}
+
+.money_con6 .money_con6_div {
+  margin-right: 2%;
+}
+
+.money_con6 p {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.money_con6 {
+  text-align: center;
+}
+
+.money_con6 .con_btn {
+  margin-top: 30px;
+}
+
+/* 三级联动 */
+
+select {
+  width: 354px;
+  height: 35px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+#s_county {
+  display: none;
+}
+
+.money_con6 .half_input {
+  width: 177px;
+  float: left;
+}
+
+#con1,
+#con2,
+#con3,
+#con4,
+#con5,
+#con6,
+#con7 {
+  display: none;
+}
+.money_con5{
+  padding-bottom:100px; 
+}
