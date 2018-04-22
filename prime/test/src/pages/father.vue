@@ -8,6 +8,7 @@
     <p slot="slot2">我是slot2</p>
   </child>
   <p ref="p">hellop</p>
+  <input type="text" v-model="">
   <button type="button" name="button" @click="mylog">log</button>
 </div>
 </template>
@@ -33,6 +34,7 @@ export default {
     func(msg) {
       console.log(msg);
     },
+
     mylog() {
       // console.log("1", );
       this.$refs.child.log()
