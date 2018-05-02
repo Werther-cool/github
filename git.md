@@ -14,8 +14,15 @@ $ git checkout [branch-name]
 # 新建一个分支，并切换到该分支
 $ git checkout -b [branch]
 
-
+将本地分支 和远端分支连接 如果没有则自动
  git push --set-upstream origin testbranch
+
+撤销
+一个提交的同时会创建一个新的提交。(安全)
+git revert HEAD~2
+
+回滚 撤销前面的提交
+git reset HEAD~2
 
 #常用
 
