@@ -24,6 +24,9 @@ git revert HEAD~2
 回滚 撤销前面的提交
 git reset HEAD~2
 
+合并分支
+切换到要合并的分支 git merge 分支名字
+
 #常用
 
 # 显示今天你写了多少行代码
