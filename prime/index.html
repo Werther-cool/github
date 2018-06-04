@@ -10,21 +10,37 @@
     <input type="text">
     <span>check</span>
     <script>
-        var value = document.getElementsByTagName('input')[0].value;
-    var  btn = document.getElementsByTagName('span')[0];
-    btn.addEventListener('click',function () {
-        console.log(value);
-        var reg = /\s+/g; 
-        if(reg.test(value) === false) 
-        { 
-            alert("error");
-            return false;
-        }else{
-            alert("ok");
-            return true;
-        } 
-    })
+    //     var value = document.getElementsByTagName('input')[0].value;
+    // var  btn = document.getElementsByTagName('span')[0];
+    // btn.addEventListener('click',function () {
+    //     console.log(value);
+    //     var reg = /\s+/g; 
+    //     if(reg.test(value) === false) 
+    //     { 
+    //         alert("error");
+    //         return false;
+    //     }else{
+    //         alert("ok");
+    //         return true;
+    //     } 
+    // })
+    var strtime = '2014-04-23';
+    var date = new Date(strtime); //传入一个时间格式，如果不传入就是获取现在的时间了，这样做不兼容火狐。
+    var date1 = new Date(strtime).getTime(); //传入一个时间格式，如果不传入就是获取现在的时间了，这样做不兼容火狐。
+    console.log(date);
     
+    // 可以这样做
+    // var date = new Date(strtime.replace(/-/g, '/'));
+    console.log(date1);
+
+    // 有三种方式获取，在后面会讲到三种方式的区别
+    time1 = date.getTime();
+    time2 = date.valueOf();
+    time3 = Date.parse(date);
+    console.log(time1);
+    console.log(time2);
+    console.log(time3);
+
     
     </script>
 </body>
