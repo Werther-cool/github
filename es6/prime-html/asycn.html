@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // async function f() {
+    //   await Promise.reject('err')
+    //     .catch (e=> console.log(e));
+    //   return  await Promise.resolve("hello world");
+    // }
+    // f().then(
+    //   v=>console.log(v)      
+    // )
+    
+    async function main() {
+      try {
+       const a = await Promise.reject('err')
+        console.log("123");
+        
+    const b =  await Promise.resolve("hi")
+    console.log(b);
+    
+      } catch (error) {
+        console.log(error);  
+      }
+    }
+    main().then(
+      v => console.log(v)
+      
+    )
+
+    // 题
+    async function async1(){
+    console.log('async1 start')
+    await async2()
+    console.log('async1 end')
+    }
+    async function async2(){
+        console.log('async2')
+    }
+    console.log('script start')
+    setTimeout(function(){
+        console.log('setTimeout') 
+    },0)  
+    async1();
+    new Promise(function(resolve){
+        console.log('promise1')
+        resolve();
+    }).then(function(){
+        console.log('promise2')
+    })
+    console.log('script end')
+    /* 9 script start
+    2 async1 start
+    7 async2
+    15 promise1
+    20 script end
+    18 promise2
+    4 async1 end
+    undefined
+    11 setTimeout */
+  
+  </script>
+</body>
+</html>
